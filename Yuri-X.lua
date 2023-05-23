@@ -36,7 +36,7 @@ notifications:message{
 
 wait(4)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/yuh95/Yuri-X/main/Source%201"),true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source1.lua"),true))()
 
 wait(0.5)
 
@@ -49,7 +49,7 @@ game:GetService("ReplicatedStorage").Arrow.Trail.Color = ColorSequence.new({
 
 wait(3)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/yuh95/Yuri-X/main/Source%202"),true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source2.lua"),true))()
 
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> - v5.0",
@@ -59,7 +59,7 @@ notifications:message{
 
 wait(5)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/yuh95/Yuri-X/main/Source%203"),true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source3.lua"),true))()
 
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> - v5.0",
