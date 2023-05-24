@@ -35,7 +35,7 @@ end)
 
 YuriX.Name = "YuriX"
 YuriX.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-YuriX.Enabled = false
+YuriX.Enabled = true
 YuriX.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Bind.Name = "Bind"

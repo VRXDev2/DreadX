@@ -18,7 +18,7 @@ local function loadOres()
             NitrateEsp.Size = part.Size
             NitrateEsp.Transparency = 0.3
             NitrateEsp.Color = BrickColor.new("Institutional white")
-            NitrateEsp.Paremt = workspace.YuriX.OreESPAdornee
+            NitrateEsp.Parent = workspace.YuriX.OreESPAdornee
 
         end
     end
@@ -33,7 +33,7 @@ local function loadOres()
             UpdateNitrateEsp.Size = part.Size
             UpdateNitrateEsp.Transparency = 0.3
             UpdateNitrateEsp.Color = BrickColor.new("Institutional white")
-            UpdateNitrateEsp.Paremt = workspace.YuriX.OreESPAdornee
+            UpdateNitrateEsp.Parent = workspace.YuriX.OreESPAdornee
         end
     end
 
@@ -54,7 +54,7 @@ local function loadOres()
             IronEsp.Size = part.Size
             IronEsp.Transparency = 0.3
             IronEsp.Color = BrickColor.new("Burlap")
-            IronEsp.Paremt = workspace.YuriX.OreESPAdornee
+            IronEsp.Parent = workspace.YuriX.OreESPAdornee
 
         end
     end
@@ -68,7 +68,7 @@ local function loadOres()
             UpdateIronEsp.Size = part.Size
             UpdateIronEsp.Transparency = 0.3
             UpdateIronEsp.Color = BrickColor.new("Burlap")
-            UpdateIronEsp.Paremt = workspace.YuriX.OreESPAdornee
+            UpdateIronEsp.Parent = workspace.YuriX.OreESPAdornee
         end
     end
 
@@ -90,7 +90,7 @@ local function loadOres()
                 StoneEsp.Size = part.Size
                 StoneEsp.Transparency = 0.3
                 StoneEsp.Color = BrickColor.new("Grey")
-                StoneEsp.Paremt = workspace.YuriX.OreESPAdornee
+                StoneEsp.Parent = workspace.YuriX.OreESPAdornee
             end
         end
     end
