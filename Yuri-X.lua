@@ -7,7 +7,7 @@ local notifications = loadstring(game:HttpGet(("https://pastebin.com/raw/gTvmWhE
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Updated, April 24 2023!",
-    Icon = 6023426926
+    Icon = 13535930665
 }
 
 wait(5)
@@ -17,7 +17,7 @@ setclipboard('discord.gg/3500')
 notifications:message{
     Title = "<font color='rgb(148, 0, 211)'>Official</font> Discord Server",
     Description = "Copied To Clipboard!",
-    Icon = 6023426926
+    Icon = 13535930665
 }
 
 wait(5)
@@ -25,7 +25,7 @@ wait(5)
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Loading, Please Wait!",
-    Icon = 6023426926
+    Icon = 13535930665
 }
 
 wait(4)
@@ -47,7 +47,7 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Player Chams Loaded!",
-    Icon = 6023426926
+    Icon = 13535930665
 }
 
 wait(5)
@@ -57,7 +57,7 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Aimlock Loaded, Keybind 'Q'.",
-    Icon = 6023426926
+    Icon = 13535930665
 }
 
 wait(5)
@@ -81,7 +81,7 @@ for _, part in ipairs(parts) do
         notifications:message{
             Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
             Description = "Nitrate Ores Located!",
-            Icon = 6023426926
+            Icon = 13535930665
         }
     end
 end
@@ -122,7 +122,7 @@ for _, part in ipairs(parts) do
         notifications:message{
             Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
             Description = "Iron Ores Located!",
-            Icon = 6023426926
+            Icon = 13535930665
         }
     end
 end
@@ -147,7 +147,7 @@ wait(5)
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Stone Ores Located!",
-    Icon = 6023426926
+    Icon = 13535930665
 }
 
 local function adornStoneOre(part)
@@ -228,7 +228,7 @@ end)
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "TC Chams Loaded, Keybind 'T'.",
-    Icon = 6023426926
+    Icon = 13535930665
 }
 
 wait(5)
@@ -236,7 +236,7 @@ wait(5)
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Military Crates Located!",
-    Icon = 6023426926
+    Icon = 13535930665
 }
 
 local function onPartAdded(part)
@@ -278,7 +278,7 @@ for _, part in ipairs(parts) do
         notifications:message{
             Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
             Description = "Packages Located!",
-            Icon = 6023426926
+            Icon = 13535930665
         }
     end
 end
@@ -794,7 +794,7 @@ end
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Freecam Loaded, Keybind 'Y'.",
-    Icon = 6023426926
+    Icon = 13535930665
 }
 
 wait(5)
@@ -802,7 +802,7 @@ wait(5)
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Loading Finished!",
-    Icon = 6023426926
+    Icon = 13535930665
 }
 
 wait(3)

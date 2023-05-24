@@ -34,11 +34,7 @@ local workspace = game:GetService("Workspace")
 local fpsArms = workspace.Ignore.FPSArms
 
 local material = Enum.Material.ForceField
---local color = Color3.fromRGB(98, 37, 209)
-
-while true do task.wait(1/20)
-    color = Color3.fromHSV(tick() % 20/20, 1, 1)
-end
+local color = Color3.fromHSV(tick() % 20/20, 1, 1)
 
 
 for _, part in pairs(fpsArms:GetDescendants()) do
@@ -55,7 +51,7 @@ local replicatedStorage = game:GetService("ReplicatedStorage")
 local handModels = replicatedStorage:WaitForChild("HandModels")
 
 local material = Enum.Material.ForceField
---local color = Color3.fromRGB(98, 37, 209)
+local color = Color3.fromHSV(tick() % 20/20, 1, 1)
 
 for _, part in pairs(handModels:GetDescendants()) do
     if part:IsA("BasePart") then
