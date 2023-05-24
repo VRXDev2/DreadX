@@ -65,7 +65,7 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main
 
 wait(2)
 
-local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
+local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("YuriX").Background.Frame
 
 wait(1)
 
