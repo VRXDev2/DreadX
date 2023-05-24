@@ -63,7 +63,7 @@ print(workspace.YuriX.Toggles:WaitForChild("toggleAimlock").Value)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/GUI.lua"), true))()
 
-wait(2)
+wait(5)
 
 local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("YuriX").Background.Frame
 
