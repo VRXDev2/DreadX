@@ -63,13 +63,13 @@ local function togglePlayerESP()
     if toggle == false then
         toggle = true
         loadPlayers()
-        Frame.OreESPToggled.Text = "ON"
-        Frame.OreESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
+        Frame.PlayerESPToggled.Text = "ON"
+        Frame.PlayerESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
     elseif toggle == true then
         toggle = false
         disablePlayerESP()
-        Frame.OreESPToggled.Text = "OFF"
-        Frame.OreESPToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
+        Frame.PlayerESPToggled.Text = "OFF"
+        Frame.PlayerESPToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
     end
 end
 
