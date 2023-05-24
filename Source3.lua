@@ -1,5 +1,6 @@
 -- Aimlock </>
 local Camera = workspace.CurrentCamera
+local player = workspace.Players.LocalPlayer
 
 _G.CircleSides = 100
 _G.CircleColor = Color3.fromRGB(98, 37, 209)
@@ -78,7 +79,7 @@ Mouse.KeyDown:Connect(function(KeyPressed)
         else
             LockedPart = FindClosestPart()
             MouseLock.Settings.Enabled = true
-            Frame.AimlockToggled.Text = "ON - " .. LockedPart.Parent.Name
+            Frame.AimlockToggled.Text = "ON - " .. LockedPart.Parent.Parent.Name
             Frame.AimlockToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
         end
     end
@@ -86,11 +87,16 @@ end)
 
 RunService.Stepped:Connect(function()
     if MouseLock.Settings.Enabled == true and LockedPart ~= nil then
-        local Vector = CurrentCamera:WorldToScreenPoint(LockedPart.Position + LockedPart.Velocity * MouseLock.Settings.Prediction)
-        local root = game.Players.LocalPlayer.Character.HumanoidRootPart
-        local rootPosition = root.Position + Vector3.new(0, 2, 0)
+        local character = player.Character
+        if character then
+            local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+            if root then
+                local Vector = CurrentCamera:WorldToScreenPoint(LockedPart.Position + LockedPart.Velocity * MouseLock.Settings.Prediction)
+                local rootPosition = root.Position + Vector3.new(0, 2, 0)
+                CurrentCamera.CFrame = CFrame.lookAt(Vector, rootPosition)
+            end
+        end
 ---@diagnostic disable-next-line: undefined-global
         --mousemoverel(Vector.X - Mouse.X, Vector.Y - Mouse.Y)
-        CurrentCamera.CFrame = CFrame.lookAt(Vector, rootPosition)
     end
 end)
