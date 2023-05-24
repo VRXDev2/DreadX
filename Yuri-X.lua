@@ -62,15 +62,6 @@ notifications:message{
 
 wait(5)
 
--- Always Day
-for i = 1, math.huge do
-    game:GetService("Lighting").TimeOfDay = 12
-    wait(1)
-end
-
-
-wait(5)
-
 -- Nitrate Ores </>
 
 local parts = workspace:GetDescendants()
@@ -832,4 +823,9 @@ game.Players.PlayerRemoving:Connect(function(player)
         Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
         Description = (player.DisplayName .. " Left The Server!")
     }
+end)
+
+-- Always Day
+game.GetService("RunService").Stepped:Connect(function()
+    game:GetService("Lighting").TimeOfDay = 12
 end)
