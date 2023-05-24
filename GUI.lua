@@ -19,7 +19,7 @@ local toggle = false
 --Properties:
 
 UserInputService.InputBegan:Connect(function(input)
-    if input.KeyCode == 277 then
+    if input.KeyCode == Enum.KeyCode.Insert then
         if toggle == false then
             toggle = true
             Background.Visible = true

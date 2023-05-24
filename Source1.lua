@@ -16,6 +16,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.GameUI.FPS.Crosshair.Visible = 
 
 -- Custom CrossHair </>
 
+---@diagnostic disable-next-line: undefined-global
 local CrossHairX = Drawing.new("Circle")
 
 CrossHairX.Position =

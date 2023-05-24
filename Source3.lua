@@ -9,6 +9,7 @@ _G.CircleFilled = false
 _G.CircleVisible = true
 _G.CircleThickness = 0
 
+---@diagnostic disable-next-line: undefined-global
 local FOVCircle = Drawing.new("Circle")
 local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
 
@@ -85,8 +86,8 @@ end)
 
 RunService.Stepped:Connect(function()
     if MouseLock.Settings.Enabled == true and LockedPart ~= nil then
-        local Vector = CurrentCamera:WorldToScreenPoint(LockedPart.Position + LockedPart.Velocity *
-                                                            MouseLock.Settings.Prediction)
+        local Vector = CurrentCamera:WorldToScreenPoint(LockedPart.Position + LockedPart.Velocity * MouseLock.Settings.Prediction)
+---@diagnostic disable-next-line: undefined-global
         mousemoverel(Vector.X - Mouse.X, Vector.Y - Mouse.Y)
     end
 end)
