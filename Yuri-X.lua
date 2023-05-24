@@ -5,7 +5,7 @@
 local notifications = loadstring(game:HttpGet(("https://pastebin.com/raw/gTvmWhEe"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
     Description = "Updated, April 24 2023!",
     Icon = 6023426926
 }
@@ -23,7 +23,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
     Description = "Loading, Please Wait!",
     Icon = 6023426926
 }
@@ -45,7 +45,7 @@ wait(3)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source2.lua"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
     Description = "Player Chams Loaded!",
     Icon = 6023426926
 }
@@ -55,7 +55,7 @@ wait(5)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source3.lua"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
     Description = "Aimlock Loaded, Keybind 'Q'.",
     Icon = 6023426926
 }
@@ -72,14 +72,14 @@ for _, part in ipairs(parts) do
         local NitrateEsp = Instance.new("BoxHandleAdornment")
         NitrateEsp.Adornee = part
         NitrateEsp.AlwaysOnTop = true
-        NitrateEsp.ZIndex = 0
+        NitrateEsp.ZIndeX</font> = 0
         NitrateEsp.Size = part.Size
         NitrateEsp.Transparency = 0.3
         NitrateEsp.Color = BrickColor.new("Institutional white")
         NitrateEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
             Description = "Nitrate Ores Located!",
             Icon = 6023426926
         }
@@ -92,7 +92,7 @@ local function onPartAdded(part)
         local UpdateNitrateEsp = Instance.new("BoxHandleAdornment")
         UpdateNitrateEsp.Adornee = part
         UpdateNitrateEsp.AlwaysOnTop = true
-        UpdateNitrateEsp.ZIndex = 0
+        UpdateNitrateEsp.ZIndeX</font> = 0
         UpdateNitrateEsp.Size = part.Size
         UpdateNitrateEsp.Transparency = 0.3
         UpdateNitrateEsp.Color = BrickColor.new("Institutional white")
@@ -113,14 +113,14 @@ for _, part in ipairs(parts) do
         local IronEsp = Instance.new("BoxHandleAdornment")
         IronEsp.Adornee = part
         IronEsp.AlwaysOnTop = true
-        IronEsp.ZIndex = 0
+        IronEsp.ZIndeX</font> = 0
         IronEsp.Size = part.Size
         IronEsp.Transparency = 0.3
         IronEsp.Color = BrickColor.new("Burlap")
         IronEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
             Description = "Iron Ores Located!",
             Icon = 6023426926
         }
@@ -132,7 +132,7 @@ local function onPartAdded(part)
         local UpdateIronEsp = Instance.new("BoxHandleAdornment")
         UpdateIronEsp.Adornee = part
         UpdateIronEsp.AlwaysOnTop = true
-        UpdateIronEsp.ZIndex = 0
+        UpdateIronEsp.ZIndeX</font> = 0
         UpdateIronEsp.Size = part.Size
         UpdateIronEsp.Transparency = 0.3
         UpdateIronEsp.Color = BrickColor.new("Burlap")
@@ -145,7 +145,7 @@ workspace.DescendantAdded:Connect(onPartAdded)
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
     Description = "Stone Ores Located!",
     Icon = 6023426926
 }
@@ -157,7 +157,7 @@ local function adornStoneOre(part)
             local StoneEsp = Instance.new("BoxHandleAdornment")
             StoneEsp.Adornee = part
             StoneEsp.AlwaysOnTop = true
-            StoneEsp.ZIndex = 0
+            StoneEsp.ZIndeX</font> = 0
             StoneEsp.Size = part.Size
             StoneEsp.Transparency = 0.3
             StoneEsp.Color = BrickColor.new("Grey")
@@ -191,7 +191,7 @@ local function addAdornments()
             local TCESP = Instance.new("BoxHandleAdornment")
             TCESP.Adornee = part
             TCESP.AlwaysOnTop = true
-            TCESP.ZIndex = 0
+            TCESP.ZIndeX</font> = 0
             TCESP.Size = Vector3.new(2.5, 6.25, 2.5)
             TCESP.Transparency = 0.3
             TCESP.Color = BrickColor.new("Royal purple")
@@ -226,7 +226,7 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 end)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
     Description = "TC Chams Loaded, Keybind 'T'.",
     Icon = 6023426926
 }
@@ -234,7 +234,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
     Description = "Military Crates Located!",
     Icon = 6023426926
 }
@@ -246,7 +246,7 @@ local function onPartAdded(part)
             local MilitaryEsp = Instance.new("BoxHandleAdornment")
             MilitaryEsp.Adornee = part
             MilitaryEsp.AlwaysOnTop = true
-            MilitaryEsp.ZIndex = 0
+            MilitaryEsp.ZIndeX</font> = 0
             MilitaryEsp.Size = part.Size
             MilitaryEsp.Transparency = 0.3
             MilitaryEsp.Color = BrickColor.new("Bright yellow")
@@ -269,14 +269,14 @@ for _, part in ipairs(parts) do
         local PartCrateEsp = Instance.new("BoxHandleAdornment")
         PartCrateEsp.Adornee = part
         PartCrateEsp.AlwaysOnTop = true
-        PartCrateEsp.ZIndex = 0
+        PartCrateEsp.ZIndeX</font> = 0
         PartCrateEsp.Size = part.Size
         PartCrateEsp.Transparency = 0.3
         PartCrateEsp.Color = BrickColor.new("Bright yellow")
         PartCrateEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
             Description = "Packages Located!",
             Icon = 6023426926
         }
@@ -289,7 +289,7 @@ local function onPartAdded(part)
         local UpdatePartCrateEsp = Instance.new("BoxHandleAdornment")
         UpdatePartCrateEsp.Adornee = part
         UpdatePartCrateEsp.AlwaysOnTop = true
-        UpdatePartCrateEsp.ZIndex = 0
+        UpdatePartCrateEsp.ZIndeX</font> = 0
         UpdatePartCrateEsp.Size = part.Size
         UpdatePartCrateEsp.Transparency = 0.3
         UpdatePartCrateEsp.Color = BrickColor.new("Bright yellow")
@@ -306,7 +306,7 @@ wait(5)
 function sandbox(var, func)
     local env = getfenv(func)
     local newenv = setmetatable({}, {
-        __index = function(self, k)
+        __indeX</font> = function(self, k)
             if k == "script" then
                 return var
             else
@@ -369,7 +369,7 @@ table.insert(cors, sandbox(LocalScript0, function()
 
     local Spring = {}
     do
-        Spring.__index = Spring
+        Spring.__indeX</font> = Spring
 
         function Spring.new(freq, pos)
             local self = setmetatable({}, Spring)
@@ -422,7 +422,7 @@ table.insert(cors, sandbox(LocalScript0, function()
             end
 
             local function fDeadzone(x)
-                return fCurve((x - K_DEADZONE) / (1 - K_DEADZONE))
+                return fCurve((X</font> - K_DEADZONE) / (1 - K_DEADZONE))
             end
 
             function thumbstickCurve(x)
@@ -431,7 +431,7 @@ table.insert(cors, sandbox(LocalScript0, function()
         end
 
         local gamepad = {
-            ButtonX = 0,
+            ButtonX</font> = 0,
             ButtonY = 0,
             DPadDown = 0,
             DPadUp = 0,
@@ -503,7 +503,7 @@ table.insert(cors, sandbox(LocalScript0, function()
         end
 
         function Input.Fov(dt)
-            local kGamepad = (gamepad.ButtonX - gamepad.ButtonY) * FOV_GAMEPAD_SPEED
+            local kGamepad = (gamepad.ButtonX</font> - gamepad.ButtonY) * FOV_GAMEPAD_SPEED
             local kMouse = mouse.MouseWheel * FOV_WHEEL_SPEED
             mouse.MouseWheel = 0
             return kGamepad + kMouse
@@ -583,19 +583,19 @@ table.insert(cors, sandbox(LocalScript0, function()
         local znear = 0.1
         local viewport = Camera.ViewportSize
         local projy = 2 * tan(cameraFov / 2)
-        local projx = viewport.x / viewport.y * projy
-        local fx = cameraFrame.rightVector
+        local projX</font> = viewport.X</font> / viewport.y * projy
+        local fX</font> = cameraFrame.rightVector
         local fy = cameraFrame.upVector
         local fz = cameraFrame.lookVector
 
         local minVect = Vector3.new()
         local minDist = 512
 
-        for x = 0, 1, 0.5 do
+        for X</font> = 0, 1, 0.5 do
             for y = 0, 1, 0.5 do
-                local cx = (x - 0.5) * projx
+                local cX</font> = (X</font> - 0.5) * projx
                 local cy = (y - 0.5) * projy
-                local offset = fx * cx - fy * cy + fz
+                local offset = fX</font> * cX</font> - fy * cy + fz
                 local origin = cameraFrame.p + offset * znear
                 local part, hit = workspace:FindPartOnRay(Ray.new(origin, offset.unit * minDist))
                 local dist = (hit - origin).magnitude
@@ -792,7 +792,7 @@ for i, v in pairs(cors) do
 end
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
     Description = "Freecam Loaded, Keybind 'Y'.",
     Icon = 6023426926
 }
@@ -800,7 +800,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
     Description = "Loading Finished!",
     Icon = 6023426926
 }
@@ -811,7 +811,7 @@ wait(3)
 
 game.Players.PlayerAdded:Connect(function(player)
     notifications:message{
-        Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
         Description = (player.DisplayName .. " Joined The Server!")
     }
 end)
@@ -820,7 +820,7 @@ end)
 
 game.Players.PlayerRemoving:Connect(function(player)
     notifications:message{
-        Title = "Yuri <font color='rgb(148, 0, 211)'>X <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
         Description = (player.DisplayName .. " Left The Server!")
     }
 end)
