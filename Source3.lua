@@ -1,7 +1,4 @@
---[[ Stop Skidding Loser, Yuri Owns You! :clown: ]]
-
--- Aimlock </>
-
+--[[ Stop Skidding Loser, Yuri Owns You! :clown: ]] -- Aimlock </>
 local Camera = workspace.CurrentCamera
 
 _G.CircleSides = 100
@@ -54,7 +51,8 @@ function FindClosestPart()
     local shortestDistance = math.huge
 
     for _, part in pairs(game.Workspace:GetDescendants()) do
-        if part.Name == MouseLock.Settings.AimPart and part:IsA("BasePart") and part.CollisionGroupId == 2 and IsInFOVCircle(part) then
+        if part.Name == MouseLock.Settings.AimPart and part:IsA("BasePart") and part.CollisionGroupId == 2 and
+            IsInFOVCircle(part) then
             local pos = CurrentCamera:WorldToViewportPoint(part.Position)
             local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(Mouse.X, Mouse.Y)).magnitude
             if magnitude < shortestDistance then
@@ -81,7 +79,8 @@ end)
 
 RunService.Stepped:Connect(function()
     if MouseLock.Settings.Enabled == true and LockedPart ~= nil then
-        local Vector = CurrentCamera:WorldToScreenPoint(LockedPart.Position + LockedPart.Velocity * MouseLock.Settings.Prediction)
+        local Vector = CurrentCamera:WorldToScreenPoint(LockedPart.Position + LockedPart.Velocity *
+                                                            MouseLock.Settings.Prediction)
         mousemoverel(Vector.X - Mouse.X, Vector.Y - Mouse.Y)
     end
 end)

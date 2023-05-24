@@ -1,7 +1,4 @@
---[[ Stop Skidding Loser, Yuri Owns You! :clown: ]]
-
--- Sky </>
-
+--[[ Stop Skidding Loser, Yuri Owns You! :clown: ]] -- Sky </>
 local skybox = Instance.new("Sky")
 skybox.Parent = game.Lighting
 skybox.SkyboxBk = "http://www.roblox.com/asset/?id=159454299"
@@ -20,7 +17,8 @@ game:GetService("Players").LocalPlayer.PlayerGui.GameUI.FPS.Crosshair.Visible = 
 
 local CrossHairX = Drawing.new("Circle")
 
-CrossHairX.Position = Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)
+CrossHairX.Position =
+    Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)
 CrossHairX.Color = Color3.fromRGB(98, 37, 209)
 CrossHairX.Transparency = 0.5
 CrossHairX.Thickness = 0.1
