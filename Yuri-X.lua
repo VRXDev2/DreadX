@@ -41,7 +41,7 @@ game:GetService("ReplicatedStorage").Arrow.Trail.Color = ColorSequence.new(
     {ColorSequenceKeypoint.new(0, Color3.fromRGB(85, 0, 255)),
      ColorSequenceKeypoint.new(1, Color3.fromRGB(229, 111, 255))})
 
-wait(3)
+wait(1)
 
 local config = Instance.new("Folder")
 config.Name = "YuriX"
@@ -72,7 +72,7 @@ print(workspace.YuriX.Toggles:WaitForChild("toggleAimlock").Value)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/GUI.lua"), true))()
 
-wait(5)
+wait(3)
 
 local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("YuriX").Background.Frame
 
@@ -86,7 +86,7 @@ notifications:message{
     Icon = 13535930665
 }
 
-wait(5)
+wait(1.75)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source3.lua"), true))()
 
@@ -96,11 +96,11 @@ notifications:message{
     Icon = 13535930665
 }
 
-wait(5)
+wait(2)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/OreESP.lua"), true))()
 
-wait(5)
+wait(2.5)
 
 -- TCs </>
 
@@ -159,7 +159,7 @@ notifications:message{
     Icon = 13535930665
 }
 
-wait(5)
+wait(2)
 
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
@@ -177,7 +177,7 @@ local function onPartAdded(part)
             MilitaryEsp.ZIndex = 0
             MilitaryEsp.Size = part.Size
             MilitaryEsp.Transparency = 0.3
-            MilitaryEsp.Color = BrickColor.new("Bright yellow")
+            MilitaryEsp.Color = BrickColor.new("Dark Royal blue")
             MilitaryEsp.Parent = workspace
         end
     end
@@ -185,7 +185,7 @@ end
 
 workspace.DescendantAdded:Connect(onPartAdded)
 
-wait(5)
+wait(1)
 
 -- Part Crates </>
 
@@ -227,7 +227,7 @@ end
 
 workspace.DescendantAdded:Connect(onPartAdded)
 
-wait(5)
+wait(2)
 
 -- FreeCam </>
 

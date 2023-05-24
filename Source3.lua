@@ -1,6 +1,6 @@
 -- Aimlock </>
 local Camera = workspace.CurrentCamera
-local player = workspace.Players.LocalPlayer
+local player = game.Players.LocalPlayer
 
 _G.CircleSides = 100
 _G.CircleColor = Color3.fromRGB(98, 37, 209)
