@@ -12,7 +12,7 @@ local FreecamToggled = Instance.new("TextLabel")
 local TotemESPToggled = Instance.new("TextLabel")
 local Bind = Instance.new("TextLabel")
 
-local UserInputService = game.getService("UserInputService")
+local UserInputService = game:getService("UserInputService")
 
 local toggle = false
 
