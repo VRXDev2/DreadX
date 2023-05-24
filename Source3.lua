@@ -78,7 +78,7 @@ Mouse.KeyDown:Connect(function(KeyPressed)
         else
             LockedPart = FindClosestPart()
             MouseLock.Settings.Enabled = true
-            Frame.AimlockToggled.Text = "ON - " .. LockedPart.Name
+            Frame.AimlockToggled.Text = "ON - " .. LockedPart.Parent.Name
             Frame.AimlockToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
         end
     end
@@ -87,7 +87,10 @@ end)
 RunService.Stepped:Connect(function()
     if MouseLock.Settings.Enabled == true and LockedPart ~= nil then
         local Vector = CurrentCamera:WorldToScreenPoint(LockedPart.Position + LockedPart.Velocity * MouseLock.Settings.Prediction)
+        local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+        local rootPosition = root.Position + Vector3.new(0, 2, 0)
 ---@diagnostic disable-next-line: undefined-global
-        mousemoverel(Vector.X - Mouse.X, Vector.Y - Mouse.Y)
+        --mousemoverel(Vector.X - Mouse.X, Vector.Y - Mouse.Y)
+        CurrentCamera.CFrame = CFrame.lookAt(Vector, rootPosition)
     end
 end)

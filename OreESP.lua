@@ -43,7 +43,7 @@ local function loadOres()
 
     workspace.DescendantAdded:Connect(onPartAdded)
 
-    wait(1)
+    wait(0.25)
 
     -- Iron Ores </>
 
@@ -78,7 +78,7 @@ local function loadOres()
 
     workspace.DescendantAdded:Connect(onPartAdded)
 
-    wait(5)
+    wait(0.25)
 
     -- Stone Ores </>
 
