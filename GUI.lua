@@ -10,12 +10,44 @@ local TotemESP = Instance.new("TextLabel")
 local Aimlock = Instance.new("TextLabel")
 local FreecamToggled = Instance.new("TextLabel")
 local TotemESPToggled = Instance.new("TextLabel")
+local Bind = Instance.new("TextLabel")
+
+local UserInputService = game.getService("UserInputService")
+
+local toggle = false
 
 --Properties:
 
+UserInputService.InputBegan:Connect(function(input)
+    if input.KeyCode == 277 then
+        if toggle == false then
+            toggle = true
+            YuriX.Enabled = true
+            Bind.Visible = false
+        elseif toggle == true then
+            toggle = false
+            YuriX.Enabled = false
+            Bind.Visible = true
+        end
+    end
+end)
+
+
 YuriX.Name = "YuriX"
 YuriX.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+YuriX.Enabled = false
 YuriX.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Bind.Name = "Bind"
+Bind.Parent = YuriX
+Bind.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Bind.BackgroundTransparency = 1.000
+Bind.Position = UDim2.new(0.870000005, 0, 0.0350000001, 0)
+Bind.Size = UDim2.new(0.129999995, 0, 0.0500000007, 0)
+Bind.Font = Enum.Font.SourceSans
+Bind.Text = "Press INSERT to toggle"
+Bind.TextColor3 = Color3.fromRGB(0, 0, 0)
+Bind.TextSize = 20.000
 
 Background.Name = "Background"
 Background.Parent = YuriX
