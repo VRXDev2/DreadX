@@ -1,11 +1,11 @@
--- Edit crator: VRX#0001
+-- Edit creator: VRX#0001
 -- New 5.0 Devs: ssvz#0001 & killsondcintha314#5008
 -- Original Dev: k9#0001
 
 local notifications = loadstring(game:HttpGet(("https://pastebin.com/raw/gTvmWhEe"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Updated, April 24 2023!",
     Icon = 6023426926
 }
@@ -23,7 +23,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Loading, Please Wait!",
     Icon = 6023426926
 }
@@ -45,7 +45,7 @@ wait(3)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source2.lua"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Player Chams Loaded!",
     Icon = 6023426926
 }
@@ -55,7 +55,7 @@ wait(5)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source3.lua"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Aimlock Loaded, Keybind 'Q'.",
     Icon = 6023426926
 }
@@ -79,7 +79,7 @@ for _, part in ipairs(parts) do
         NitrateEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
             Description = "Nitrate Ores Located!",
             Icon = 6023426926
         }
@@ -120,7 +120,7 @@ for _, part in ipairs(parts) do
         IronEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
             Description = "Iron Ores Located!",
             Icon = 6023426926
         }
@@ -145,7 +145,7 @@ workspace.DescendantAdded:Connect(onPartAdded)
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Stone Ores Located!",
     Icon = 6023426926
 }
@@ -226,7 +226,7 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 end)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "TC Chams Loaded, Keybind 'T'.",
     Icon = 6023426926
 }
@@ -234,7 +234,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Military Crates Located!",
     Icon = 6023426926
 }
@@ -276,7 +276,7 @@ for _, part in ipairs(parts) do
         PartCrateEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
             Description = "Packages Located!",
             Icon = 6023426926
         }
@@ -792,7 +792,7 @@ for i, v in pairs(cors) do
 end
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Freecam Loaded, Keybind 'Y'.",
     Icon = 6023426926
 }
@@ -800,7 +800,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Loading Finished!",
     Icon = 6023426926
 }
@@ -811,7 +811,7 @@ wait(3)
 
 game.Players.PlayerAdded:Connect(function(player)
     notifications:message{
-        Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
         Description = (player.DisplayName .. " Joined The Server!")
     }
 end)
@@ -820,7 +820,7 @@ end)
 
 game.Players.PlayerRemoving:Connect(function(player)
     notifications:message{
-        Title = "Yuri <font color='rgb(148, 0, 211)'X</font> <font color='rgb(252, 3, 69)'>- VRX#0001 Edit</font> - v5.0",
+        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
         Description = (player.DisplayName .. " Left The Server!")
     }
 end)
