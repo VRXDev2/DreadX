@@ -18,8 +18,8 @@ local toggle = false
 
 --Properties:
 
-UserInputService.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.Insert then
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.Insert and not gameProcessed then
         if toggle == false then
             toggle = true
             Background.Visible = true

@@ -128,8 +128,8 @@ local function toggleOreESP()
     end
 end
 
-UserInputService.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.O then
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.O and not gameProcessed then
         toggleOreESP()
     end
 end)
