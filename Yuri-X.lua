@@ -55,6 +55,10 @@ local OreESPAdornee = Instance.new("Folder")
 OreESPAdornee.Name = "OreESPAdornee"
 OreESPAdornee.Parent = workspace:WaitForChild("YuriX")
 
+local PlayerESPAdornee = Instance.new("Folder")
+PlayerESPAdornee.Name = "PlayerESPAdornee"
+PlayerESPAdornee.Parent = workspace:WaitForChild("YuriX")
+
 local toggleAimlock = Instance.new("BoolValue")
 toggleAimlock.Name = "toggleAimlock"
 toggleAimlock.Parent = workspace.YuriX:WaitForChild("Toggles")
@@ -74,7 +78,7 @@ local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("YuriX").Backgroun
 
 wait(1)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source2.lua"), true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/PlayerESP.lua"), true))()
 
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
