@@ -1,4 +1,4 @@
---[[ Stop Skidding Loser, Yuri Owns You! :clown: ]] for i, v in pairs(
+for i, v in pairs(
     game:GetService("ReplicatedStorage").Player:GetDescendants()) do
     if v:IsA("MeshPart") or v:IsA("Part") then
         local adornment = Instance.new("BoxHandleAdornment")

@@ -1,4 +1,4 @@
---[[ Stop Skidding Loser, Yuri Owns You! :clown: ]] -- Aimlock </>
+-- Aimlock </>
 local Camera = workspace.CurrentCamera
 
 _G.CircleSides = 100

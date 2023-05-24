@@ -5,8 +5,8 @@
 local notifications = loadstring(game:HttpGet(("https://pastebin.com/raw/gTvmWhEe"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
-    Description = "Updated, April 24 2023!",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
+    Description = "Updated, May 24 2023!",
     Icon = 13535930665
 }
 
@@ -23,7 +23,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
     Description = "Loading, Please Wait!",
     Icon = 13535930665
 }
@@ -72,7 +72,7 @@ wait(1)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source2.lua"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
     Description = "Player Chams Loaded!",
     Icon = 13535930665
 }
@@ -82,7 +82,7 @@ wait(5)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source3.lua"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
     Description = "Aimlock Loaded, Keybind 'Q'.",
     Icon = 13535930665
 }
@@ -108,7 +108,7 @@ for _, part in ipairs(parts) do
         NitrateEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
             Description = "Nitrate Ores Located!",
             Icon = 13535930665
         }
@@ -149,7 +149,7 @@ for _, part in ipairs(parts) do
         IronEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
             Description = "Iron Ores Located!",
             Icon = 13535930665
         }
@@ -174,7 +174,7 @@ workspace.DescendantAdded:Connect(onPartAdded)
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
     Description = "Stone Ores Located!",
     Icon = 13535930665
 }
@@ -259,7 +259,7 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 end)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
     Description = "TC Chams Loaded, Keybind 'T'.",
     Icon = 13535930665
 }
@@ -267,7 +267,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
     Description = "Military Crates Located!",
     Icon = 13535930665
 }
@@ -309,7 +309,7 @@ for _, part in ipairs(parts) do
         PartCrateEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
             Description = "Packages Located!",
             Icon = 13535930665
         }
@@ -831,7 +831,7 @@ for i, v in pairs(cors) do
 end
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
     Description = "Freecam Loaded, Keybind 'Y'.",
     Icon = 13535930665
 }
@@ -839,7 +839,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
     Description = "Loading Finished!",
     Icon = 13535930665
 }
@@ -850,7 +850,7 @@ wait(3)
 
 game.Players.PlayerAdded:Connect(function(player)
     notifications:message{
-        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
         Description = (player.DisplayName .. " Joined The Server!")
     }
 end)
@@ -859,13 +859,7 @@ end)
 
 game.Players.PlayerRemoving:Connect(function(player)
     notifications:message{
-        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
+        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
         Description = (player.DisplayName .. " Left The Server!")
     }
 end)
-
--- Always Day
-while true do
-    game:GetService("Lighting").TimeOfDay = 12
-    wait(0.15)
-end

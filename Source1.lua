@@ -1,4 +1,4 @@
---[[ Stop Skidding Loser, Yuri Owns You! :clown: ]] -- Sky </>
+-- Sky </>
 local skybox = Instance.new("Sky")
 skybox.Parent = game.Lighting
 skybox.SkyboxBk = "http://www.roblox.com/asset/?id=159454299"
@@ -8,6 +8,7 @@ skybox.SkyboxLf = "http://www.roblox.com/asset/?id=159454286"
 skybox.SkyboxRt = "http://www.roblox.com/asset/?id=159454300"
 skybox.SkyboxUp = "http://www.roblox.com/asset/?id=159454288"
 skybox.StarCount = 5000
+
 
 -- Remove GC </>
 
@@ -72,3 +73,8 @@ for _, descendant in ipairs(handModels:GetDescendants()) do
         descendant.Visible = gone
     end
 end
+
+-- Always Day hack
+game.GetService("RunService").Stepped:Connect(function()
+    game:GetService("Lighting").TimeOfDay = 12
+end)
