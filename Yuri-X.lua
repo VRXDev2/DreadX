@@ -61,6 +61,10 @@ toggleFreecam.Parent = workspace.YuriX:WaitForChild("Toggles")
 print(workspace.YuriX.Toggles:WaitForChild("toggleAimlock").Value)
 print(workspace.YuriX.Toggles:WaitForChild("toggleAimlock").Value)
 
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/GUI.lua"), true))()
+
+wait(2)
+
 local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
 
 wait(1)
