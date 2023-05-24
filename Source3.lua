@@ -79,7 +79,8 @@ Mouse.KeyDown:Connect(function(KeyPressed)
         else
             LockedPart = FindClosestPart()
             MouseLock.Settings.Enabled = true
-            Frame.AimlockToggled.Text = "ON - " .. LockedPart.Parent.Parent.Name
+            local target = game.Players:GetPlayerFromCharacter(LockedPart.Parent)
+            Frame.AimlockToggled.Text = "ON - " .. target
             Frame.AimlockToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
         end
     end
