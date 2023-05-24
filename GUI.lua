@@ -46,7 +46,7 @@ Bind.Position = UDim2.new(0.870000005, 0, 0.0350000001, 0)
 Bind.Size = UDim2.new(0.129999995, 0, 0.0500000007, 0)
 Bind.Font = Enum.Font.SourceSans
 Bind.Text = "Press INSERT to toggle"
-Bind.TextColor3 = Color3.fromRGB(0, 0, 0)
+Bind.TextColor3 = Color3.fromRGB(255, 255, 255)
 Bind.TextSize = 20.000
 
 Background.Name = "Background"
