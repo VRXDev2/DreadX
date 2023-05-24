@@ -78,7 +78,7 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main
 
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
-    Description = "Player Chams Loaded!",
+    Description = "PlayerESP Loaded, Keybind soon",
     Icon = 13535930665
 }
 
@@ -151,7 +151,7 @@ end)
 
 notifications:message{
     Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
-    Description = "TC Chams Loaded, Keybind 'T'.",
+    Description = "TC ESP Loaded, Keybind 'U'.",
     Icon = 13535930665
 }
 

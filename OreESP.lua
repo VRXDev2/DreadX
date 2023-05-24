@@ -3,6 +3,10 @@ local notifications = loadstring(game:HttpGet(("https://pastebin.com/raw/gTvmWhE
 local UserInputService = game:getService("UserInputService")
 local toggle = true
 
+local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
+
+
+
 local function loadOres()
     -- Nitrate Ores </>
 
@@ -112,6 +116,8 @@ local function loadOres()
     }
 end
 
+loadOres()
+
 local function disableOreESP()
     for _, v in ipairs(workspace.YuriX.OreESPAdornee:GetDescendants()) do
         v:Destroy()
@@ -122,9 +128,13 @@ local function toggleOreESP()
     if toggle == false then
         toggle = true
         loadOres()
+        Frame.OreESPToggled.Text = "ON"
+        Frame.OreESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
     elseif toggle == true then
         toggle = false
         disableOreESP()
+        Frame.OreESPToggled.Text = "OFF"
+        Frame.OreESPToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
     end
 end
 
