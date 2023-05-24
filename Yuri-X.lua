@@ -5,7 +5,7 @@
 local notifications = loadstring(game:HttpGet(("https://pastebin.com/raw/gTvmWhEe"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Updated, April 24 2023!",
     Icon = 13535930665
 }
@@ -23,7 +23,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Loading, Please Wait!",
     Icon = 13535930665
 }
@@ -59,14 +59,16 @@ toggleFreecam.Name = "toggleFreecam"
 toggleFreecam.Parent = workspace.YuriX:WaitForChild("Toggles")
 
 print(workspace.YuriX.Toggles:WaitForChild("toggleAimlock").Value)
-print(workspace.YuriX.Toggles:WaitForChild("toggleFreecam").Value)
+print(workspace.YuriX.Toggles:WaitForChild("toggleAimlock").Value)
+
+local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
 
 wait(1)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source2.lua"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Player Chams Loaded!",
     Icon = 13535930665
 }
@@ -76,12 +78,14 @@ wait(5)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source3.lua"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Aimlock Loaded, Keybind 'Q'.",
     Icon = 13535930665
 }
 
 wait(5)
+
+
 
 -- Nitrate Ores </>
 
@@ -100,7 +104,7 @@ for _, part in ipairs(parts) do
         NitrateEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
             Description = "Nitrate Ores Located!",
             Icon = 13535930665
         }
@@ -141,7 +145,7 @@ for _, part in ipairs(parts) do
         IronEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
             Description = "Iron Ores Located!",
             Icon = 13535930665
         }
@@ -166,7 +170,7 @@ workspace.DescendantAdded:Connect(onPartAdded)
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Stone Ores Located!",
     Icon = 13535930665
 }
@@ -217,7 +221,7 @@ local function addAdornments()
             TCESP.Transparency = 0.3
             TCESP.Color = BrickColor.new("Royal purple")
             TCESP.Parent = workspace
-            TCESP.CFrame = CFrame.new(0, -<font color='rgb(252, 3, 69)'>2.2, 0)
+            TCESP.CFrame = CFrame.new(0, -2.2, 0)
             table.insert(TCESPs, TCESP)
         end
     end
@@ -234,9 +238,13 @@ local function toggleAdornments()
     if adorned then
         removeAdornments()
         adorned = false
+        Frame.TotemESPToggled.Text = "OFF"
+        Frame.TotemESPToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
     else
         addAdornments()
         adorned = true
+        Frame.TotemESPToggled.Text = "ON"
+        Frame.TotemESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
     end
 end
 
@@ -247,7 +255,7 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 end)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "TC Chams Loaded, Keybind 'T'.",
     Icon = 13535930665
 }
@@ -255,7 +263,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Military Crates Located!",
     Icon = 13535930665
 }
@@ -297,7 +305,7 @@ for _, part in ipairs(parts) do
         PartCrateEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
             Description = "Packages Located!",
             Icon = 13535930665
         }
@@ -405,11 +413,11 @@ table.insert(cors, sandbox(LocalScript0, function()
             local p0 = self.p
             local v0 = self.v
 
-            local offset = goal -<font color='rgb(252, 3, 69)'> p0
+            local offset = goal - p0
             local decay = exp(-f * dt)
 
-            local p1 = goal + (v0 * dt -<font color='rgb(252, 3, 69)'> offset * (f * dt + 1)) * decay
-            local v1 = (f * dt * (offset * f -<font color='rgb(252, 3, 69)'> v0) + v0) * decay
+            local p1 = goal + (v0 * dt - offset * (f * dt + 1)) * decay
+            local v1 = (f * dt * (offset * f - v0) + v0) * decay
 
             self.p = p1
             self.v = v1
@@ -439,11 +447,11 @@ table.insert(cors, sandbox(LocalScript0, function()
             local K_DEADZONE = 0.15
 
             local function fCurve(x)
-                return (exp(K_CURVATURE * x) -<font color='rgb(252, 3, 69)'> 1) / (exp(K_CURVATURE) -<font color='rgb(252, 3, 69)'> 1)
+                return (exp(K_CURVATURE * x) - 1) / (exp(K_CURVATURE) - 1)
             end
 
             local function fDeadzone(x)
-                return fCurve((x -<font color='rgb(252, 3, 69)'> K_DEADZONE) / (1 -<font color='rgb(252, 3, 69)'> K_DEADZONE))
+                return fCurve((x - K_DEADZONE) / (1 - K_DEADZONE))
             end
 
             function thumbstickCurve(x)
@@ -498,14 +506,14 @@ table.insert(cors, sandbox(LocalScript0, function()
         local navSpeed = 1
 
         function Input.Vel(dt)
-            navSpeed = clamp(navSpeed + dt * (keyboard.Up -<font color='rgb(252, 3, 69)'> keyboard.Down) * NAV_ADJ_SPEED, 0.01, 4)
+            navSpeed = clamp(navSpeed + dt * (keyboard.Up - keyboard.Down) * NAV_ADJ_SPEED, 0.01, 4)
 
             local kGamepad = Vector3.new(thumbstickCurve(gamepad.Thumbstick1.x),
-                thumbstickCurve(gamepad.ButtonR2) -<font color='rgb(252, 3, 69)'> thumbstickCurve(gamepad.ButtonL2),
+                thumbstickCurve(gamepad.ButtonR2) - thumbstickCurve(gamepad.ButtonL2),
                 thumbstickCurve(-gamepad.Thumbstick1.y)) * NAV_GAMEPAD_SPEED
 
-            local kKeyboard = Vector3.new(keyboard.D -<font color='rgb(252, 3, 69)'> keyboard.A + keyboard.K -<font color='rgb(252, 3, 69)'> keyboard.H,
-                keyboard.E -<font color='rgb(252, 3, 69)'> keyboard.Q + keyboard.I -<font color='rgb(252, 3, 69)'> keyboard.Y, keyboard.S -<font color='rgb(252, 3, 69)'> keyboard.W + keyboard.J -<font color='rgb(252, 3, 69)'> keyboard.U) *
+            local kKeyboard = Vector3.new(keyboard.D - keyboard.A + keyboard.K - keyboard.H,
+                keyboard.E - keyboard.Q + keyboard.I - keyboard.Y, keyboard.S - keyboard.W + keyboard.J - keyboard.U) *
                                   NAV_KEYBOARD_SPEED
 
             local shift = UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) or
@@ -524,7 +532,7 @@ table.insert(cors, sandbox(LocalScript0, function()
         end
 
         function Input.Fov(dt)
-            local kGamepad = (gamepad.ButtonX -<font color='rgb(252, 3, 69)'> gamepad.ButtonY) * FOV_GAMEPAD_SPEED
+            local kGamepad = (gamepad.ButtonX - gamepad.ButtonY) * FOV_GAMEPAD_SPEED
             local kMouse = mouse.MouseWheel * FOV_WHEEL_SPEED
             mouse.MouseWheel = 0
             return kGamepad + kMouse
@@ -543,7 +551,7 @@ table.insert(cors, sandbox(LocalScript0, function()
 
             local function MousePan(action, state, input)
                 local delta = input.Delta
-                mouse.Delta = Vector2.new(-delta.y, -<font color='rgb(252, 3, 69)'>delta.x)
+                mouse.Delta = Vector2.new(-delta.y, -delta.x)
                 return Enum.ContextActionResult.Sink
             end
 
@@ -558,7 +566,7 @@ table.insert(cors, sandbox(LocalScript0, function()
             end
 
             local function MouseWheel(action, state, input)
-                mouse[input.UserInputType.Name] = -<font color='rgb(252, 3, 69)'>input.Position.z
+                mouse[input.UserInputType.Name] = -input.Position.z
                 return Enum.ContextActionResult.Sink
             end
 
@@ -614,12 +622,12 @@ table.insert(cors, sandbox(LocalScript0, function()
 
         for x = 0, 1, 0.5 do
             for y = 0, 1, 0.5 do
-                local cx = (x -<font color='rgb(252, 3, 69)'> 0.5) * projx
-                local cy = (y -<font color='rgb(252, 3, 69)'> 0.5) * projy
-                local offset = fx * cx -<font color='rgb(252, 3, 69)'> fy * cy + fz
+                local cx = (x - 0.5) * projx
+                local cy = (y - 0.5) * projy
+                local offset = fx * cx - fy * cy + fz
                 local origin = cameraFrame.p + offset * znear
                 local part, hit = workspace:FindPartOnRay(Ray.new(origin, offset.unit * minDist))
-                local dist = (hit -<font color='rgb(252, 3, 69)'> origin).magnitude
+                local dist = (hit - origin).magnitude
                 if minDist > dist then
                     minDist = dist
                     minVect = offset.unit
@@ -639,14 +647,14 @@ table.insert(cors, sandbox(LocalScript0, function()
 
         cameraFov = clamp(cameraFov + fov * FOV_GAIN * (dt / zoomFactor), 1, 120)
         cameraRot = cameraRot + pan * PAN_GAIN * (dt / zoomFactor)
-        cameraRot = Vector2.new(clamp(cameraRot.x, -<font color='rgb(252, 3, 69)'>PITCH_LIMIT, PITCH_LIMIT), cameraRot.y % (2 * pi))
+        cameraRot = Vector2.new(clamp(cameraRot.x, -PITCH_LIMIT, PITCH_LIMIT), cameraRot.y % (2 * pi))
 
         local cameraCFrame = CFrame.new(cameraPos) * CFrame.fromOrientation(cameraRot.x, cameraRot.y, 0) *
                                  CFrame.new(vel * NAV_GAIN * dt)
         cameraPos = cameraCFrame.p
 
         Camera.CFrame = cameraCFrame
-        Camera.Focus = cameraCFrame * CFrame.new(0, 0, -<font color='rgb(252, 3, 69)'>GetFocusDistance(cameraCFrame))
+        Camera.Focus = cameraCFrame * CFrame.new(0, 0, -GetFocusDistance(cameraCFrame))
         Camera.FieldOfView = cameraFov
     end
 
@@ -757,12 +765,18 @@ table.insert(cors, sandbox(LocalScript0, function()
         PlayerState.Push()
         RunService:BindToRenderStep("Freecam", Enum.RenderPriority.Camera.Value, StepFreecam)
         Input.StartCapture()
+
+        Frame.FreecamToggled.Text = "ON"
+        Frame.FreecamToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
     end
 
     local function StopFreecam()
         Input.StopCapture()
         RunService:UnbindFromRenderStep("Freecam")
         PlayerState.Pop()
+
+        Frame.FreecamToggled.Text = "OFF"
+        Frame.FreecamToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
     end
 
     do
@@ -778,7 +792,7 @@ table.insert(cors, sandbox(LocalScript0, function()
         end
 
         local function CheckMacro(macro)
-            for i = 1, #macro -<font color='rgb(252, 3, 69)'> 1 do
+            for i = 1, #macro - 1 do
                 if not UserInputService:IsKeyDown(macro[i]) then
                     return
                 end
@@ -813,7 +827,7 @@ for i, v in pairs(cors) do
 end
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Freecam Loaded, Keybind 'Y'.",
     Icon = 13535930665
 }
@@ -821,7 +835,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
     Description = "Loading Finished!",
     Icon = 13535930665
 }
@@ -832,7 +846,7 @@ wait(3)
 
 game.Players.PlayerAdded:Connect(function(player)
     notifications:message{
-        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
         Description = (player.DisplayName .. " Joined The Server!")
     }
 end)
@@ -841,7 +855,7 @@ end)
 
 game.Players.PlayerRemoving:Connect(function(player)
     notifications:message{
-        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - <font color='rgb(252, 3, 69)'>VRX#0001 Edit</font> -<font color='rgb(252, 3, 69)'> v5.0",
+        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font> - v5.0",
         Description = (player.DisplayName .. " Left The Server!")
     }
 end)

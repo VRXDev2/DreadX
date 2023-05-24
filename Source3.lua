@@ -10,6 +10,8 @@ _G.CircleVisible = true
 _G.CircleThickness = 0
 
 local FOVCircle = Drawing.new("Circle")
+local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
+
 
 FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
 FOVCircle.Radius = _G.CircleRadius
@@ -69,10 +71,14 @@ Mouse.KeyDown:Connect(function(KeyPressed)
     if KeyPressed == (MouseLock.Settings.Key) then
         if MouseLock.Settings.Enabled == true then
             MouseLock.Settings.Enabled = false
+            Frame.AimlockToggled.Text = "OFF"
+            Frame.AimlockToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
             LockedPart = nil
         else
             LockedPart = FindClosestPart()
             MouseLock.Settings.Enabled = true
+            Frame.AimlockToggled.Text = "ON"
+            Frame.AimlockToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
         end
     end
 end)

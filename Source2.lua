@@ -22,7 +22,7 @@ for i, v in pairs(game.Workspace:GetChildren()) do
                 adornment.AlwaysOnTop = true
                 adornment.ZIndex = 1
                 adornment.Size = v.Size
-                adornment.Color = BrickColor.new("Light red")
+                adornment.Color = BrickColor.new("Dark red")
                 adornment.Transparency = 0.3
                 adornment.Parent = v
 
