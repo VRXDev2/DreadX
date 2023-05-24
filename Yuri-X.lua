@@ -62,6 +62,15 @@ notifications:message{
 
 wait(5)
 
+-- Always Day
+for i = 1, math.huge do
+    game:GetService("Lighting").TimeOfDay = 12
+    wait(1)
+end
+
+
+wait(5)
+
 -- Nitrate Ores </>
 
 local parts = workspace:GetDescendants()
