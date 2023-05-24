@@ -30,6 +30,7 @@ CrossHairX.Filled = true
 
 -- CAS </>
 
+local RunService = game:GetService("RunService")
 local workspace = game:GetService("Workspace")
 
 local fpsArms = workspace.Ignore.FPSArms
@@ -74,7 +75,12 @@ for _, descendant in ipairs(handModels:GetDescendants()) do
     end
 end
 
+for _, v in ipairs(game:GetService("Lighting"):GetDescendants()) do
+    v:Destroy()
+end
+
 -- Always Day hack
-game.GetService("RunService").Stepped:Connect(function()
+RunService.Stepped:Connect(function()
     game:GetService("Lighting").TimeOfDay = 12
+	
 end)
