@@ -19,11 +19,11 @@ local CrossHairX = Drawing.new("Circle")
 
 CrossHairX.Position =
     Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)
-CrossHairX.Color = Color3.fromRGB(98, 37, 209)
+CrossHairX.Color = Color3.fromRGB(120, 120, 120)
 CrossHairX.Transparency = 0.5
 CrossHairX.Thickness = 0.1
 CrossHairX.NumSides = 12
-CrossHairX.Radius = 4
+CrossHairX.Radius = 3
 CrossHairX.Visible = true
 CrossHairX.Filled = true
 
@@ -34,7 +34,12 @@ local workspace = game:GetService("Workspace")
 local fpsArms = workspace.Ignore.FPSArms
 
 local material = Enum.Material.ForceField
-local color = Color3.fromRGB(98, 37, 209)
+--local color = Color3.fromRGB(98, 37, 209)
+
+while true do task.wait(1/20)
+    color = Color3.fromHSV(tick() % 20/20, 1, 1)
+end
+
 
 for _, part in pairs(fpsArms:GetDescendants()) do
     if part:IsA("BasePart") then
@@ -50,7 +55,7 @@ local replicatedStorage = game:GetService("ReplicatedStorage")
 local handModels = replicatedStorage:WaitForChild("HandModels")
 
 local material = Enum.Material.ForceField
-local color = Color3.fromRGB(98, 37, 209)
+--local color = Color3.fromRGB(98, 37, 209)
 
 for _, part in pairs(handModels:GetDescendants()) do
     if part:IsA("BasePart") then
