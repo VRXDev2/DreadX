@@ -22,11 +22,11 @@ UserInputService.InputBegan:Connect(function(input)
     if input.KeyCode == 277 then
         if toggle == false then
             toggle = true
-            YuriX.Enabled = true
+            Background.Visible = true
             Bind.Visible = false
         elseif toggle == true then
             toggle = false
-            YuriX.Enabled = false
+            Background.Visible = false
             Bind.Visible = true
         end
     end
