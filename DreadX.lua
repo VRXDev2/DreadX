@@ -1,6 +1,6 @@
 --Creator: VRX#0001
 
-local notifications = loadstring(game:HttpGet(("https://pastebin.com/raw/gTvmWhEe"), true))()
+local notifications = loadstring(game:HttpGet(("https://pastebin.com/raw/3yS4nz8r"), true))()
 
 notifications:message{
     Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
@@ -14,7 +14,7 @@ wait(5)
 setclipboard('https://discord.gg/5bjTbbr85k')
 
 notifications:message{
-    Title = "<font color='rgb(183, 11, 209)'>Official</font> Discord Server",
+    Title = "Official <font color='rgb(89, 102, 240)'>Discord</font> Server",
     Description = "Copied To Clipboard!",
     Icon = 13535930665
 }
@@ -29,7 +29,7 @@ notifications:message{
 
 wait(3)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source1.lua"), true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/TridentSurvival/Visuals.lua"), true))()
 
 wait(0.5)
 
@@ -68,7 +68,7 @@ toggleFreecam.Parent = workspace.YuriX:WaitForChild("Toggles")
 print(workspace.YuriX.Toggles:WaitForChild("toggleAimlock").Value)
 print(workspace.YuriX.Toggles:WaitForChild("toggleAimlock").Value)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/GUI.lua"), true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/TridentSurvival/GUI.lua"), true))()
 
 wait(3)
 
@@ -76,7 +76,7 @@ local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("YuriX").Backgroun
 
 wait(1)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/PlayerESP.lua"), true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/TridentSurvival/PlayerESP.lua"), true))()
 
 notifications:message{
     Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
@@ -86,7 +86,7 @@ notifications:message{
 
 wait(1.75)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source3.lua"), true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/TridentSurvival/Aimlock.lua"), true))()
 
 notifications:message{
     Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
@@ -96,7 +96,7 @@ notifications:message{
 
 wait(2)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/OreESP.lua"), true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/TridentSurvival/OreESP.lua"), true))()
 
 wait(2.5)
 
@@ -203,7 +203,7 @@ for _, part in ipairs(parts) do
 
         notifications:message{
             Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
-            Description = "Packages Located!",
+            Description = "Part Crates Located!",
             Icon = 13535930665
         }
     end
