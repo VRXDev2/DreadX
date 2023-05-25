@@ -9,9 +9,6 @@ local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
 local function loadPlayers()
 for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) do
     if v:IsA("MeshPart") or v:IsA("Part") then
-        if v.Name == "HumanoidRootPart" then
-            return
-        end
 
         local adornment = Instance.new("BoxHandleAdornment")
         adornment.Adornee = v
@@ -21,6 +18,10 @@ for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) 
         adornment.Color = BrickColor.new("Bright green")
         adornment.Transparency = 0.55
         adornment.Parent = workspace.YuriX.PlayerESPAdornee
+
+        if v.Name == "HumanoidRootPart" then
+            v:Destroy()
+        end
     end
 end
 for i, v in pairs(game.Workspace:GetChildren()) do
@@ -28,9 +29,6 @@ for i, v in pairs(game.Workspace:GetChildren()) do
 
         for i, v in pairs(v:GetChildren()) do
             if v:IsA("Part") then
-                if v.Name == "HumanoidRootPart" then
-                    return
-                end
 
                 local adornment = Instance.new("BoxHandleAdornment")
                 adornment.Adornee = v
@@ -41,13 +39,14 @@ for i, v in pairs(game.Workspace:GetChildren()) do
                 adornment.Transparency = 0.55
                 adornment.Parent = workspace.YuriX.PlayerESPAdornee
 
+                if v.Name == "HumanoidRootPart" then
+                    v:Destroy()
+                end
             end
         end
         for i, v in pairs(v:GetChildren()) do
             if v:IsA("MeshPart") then
-                if v.Name == "HumanoidRootPart" then
-                    return
-                end
+
 
                 local adornment = Instance.new("BoxHandleAdornment")
                 adornment.Adornee = v
@@ -57,6 +56,10 @@ for i, v in pairs(game.Workspace:GetChildren()) do
                 adornment.Color = BrickColor.new("Bright green")
                 adornment.Transparency = 0.55
                 adornment.Parent = workspace.YuriX.PlayerESPAdornee
+
+                if v.Name == "HumanoidRootPart" then
+                    v:Destroy()
+                end
             end
         end
     end
