@@ -1,22 +1,20 @@
--- Edit creator: VRX#0001
--- New 5.0 Devs: ssvz#0001 & killsondcintha314#5008
--- Original Dev: k9#0001
+--Creator: VRX#0001
 
 local notifications = loadstring(game:HttpGet(("https://pastebin.com/raw/gTvmWhEe"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
-    Description = "Updated, May 24 2023!",
+    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+    Description = "Updated, May 25 2023!",
     Icon = 13535930665
 }
 
 wait(5)
 
 ---@diagnostic disable-next-line: undefined-global
-setclipboard('discord.gg/3500')
+setclipboard('https://discord.gg/5bjTbbr85k')
 
 notifications:message{
-    Title = "<font color='rgb(148, 0, 211)'>Official</font> Discord Server",
+    Title = "<font color='rgb(183, 11, 209)'>Official</font> Discord Server",
     Description = "Copied To Clipboard!",
     Icon = 13535930665
 }
@@ -24,7 +22,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
+    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
     Description = "Loading, Please Wait!",
     Icon = 13535930665
 }
@@ -81,7 +79,7 @@ wait(1)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/PlayerESP.lua"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
+    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
     Description = "PlayerESP Loaded, Keybind soon",
     Icon = 13535930665
 }
@@ -91,7 +89,7 @@ wait(1.75)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/Yuri-X2/main/Source3.lua"), true))()
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
+    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
     Description = "Aimlock Loaded, Keybind 'Q'.",
     Icon = 13535930665
 }
@@ -154,7 +152,7 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 end)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
+    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
     Description = "TC ESP Loaded, Keybind 'U'.",
     Icon = 13535930665
 }
@@ -162,7 +160,7 @@ notifications:message{
 wait(2)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
+    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
     Description = "Military Crates Located!",
     Icon = 13535930665
 }
@@ -204,7 +202,7 @@ for _, part in ipairs(parts) do
         PartCrateEsp.Parent = workspace
 
         notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
+            Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
             Description = "Packages Located!",
             Icon = 13535930665
         }
@@ -726,7 +724,7 @@ for i, v in pairs(cors) do
 end
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
+    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
     Description = "Freecam Loaded, Keybind 'Y'.",
     Icon = 13535930665
 }
@@ -734,7 +732,7 @@ notifications:message{
 wait(5)
 
 notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
+    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
     Description = "Loading Finished!",
     Icon = 13535930665
 }
@@ -745,7 +743,7 @@ wait(3)
 
 game.Players.PlayerAdded:Connect(function(player)
     notifications:message{
-        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
+        Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
         Description = (player.DisplayName .. " Joined The Server!")
     }
 end)
@@ -754,7 +752,7 @@ end)
 
 game.Players.PlayerRemoving:Connect(function(player)
     notifications:message{
-        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
+        Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
         Description = (player.DisplayName .. " Left The Server!")
     }
 end)
