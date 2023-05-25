@@ -441,7 +441,7 @@ table.insert(cors, sandbox(LocalScript0, function()
         Frame.FreecamToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
 
         notifications:message{
-            Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
             Description = "Freecam Enabled."
         }
     end
@@ -455,7 +455,7 @@ table.insert(cors, sandbox(LocalScript0, function()
         Frame.FreecamToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
         
         notifications:message{
-            Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
             Description = "Freecam Disabled."
         }
     end

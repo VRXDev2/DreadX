@@ -81,7 +81,7 @@ Mouse.KeyDown:Connect(function(KeyPressed)
             LockedPart = nil
 
             notifications:message{
-                Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+                Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
                 Description = "Aimlock Disabled."
             }
         else
@@ -91,7 +91,7 @@ Mouse.KeyDown:Connect(function(KeyPressed)
             Frame.AimlockToggled.Text = "ON - " .. target
             Frame.AimlockToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
             notifications:message{
-                Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+                Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
                 Description = "Aimlock Enabled."
             }
         end

@@ -66,7 +66,7 @@ for i, v in pairs(game.Workspace:GetChildren()) do
 end
 
 notifications:message{
-    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
     Description = "PlayerESP Enabled."
 }
 
@@ -76,10 +76,10 @@ loadPlayers()
 
 local function disablePlayerESP()
     for _, v in ipairs(workspace.YuriX.PlayerESPAdornee:GetDescendants()) do
-        adornment:Destroy()
+        v:Destroy()
     end
     notifications:message{
-        Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+        Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
         Description = "PlayerESP Disabled."
     }
 end

@@ -3,7 +3,7 @@
 local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
 
 notifications:message{
-    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
     Description = "Updated, May 25 2023!"
 }
 
@@ -20,7 +20,7 @@ notifications:message{
 wait(2.5)
 
 notifications:message{
-    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
     Description = "Loading, Please Wait!"
 }
 
@@ -74,7 +74,7 @@ wait(1)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/PlayerESP.lua"), true))()
 
 notifications:message{
-    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
     Description = "PlayerESP Loaded, Keybind 'P'."
 }
 
@@ -83,7 +83,7 @@ wait(1.75)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/Aimlock.lua"), true))()
 
 notifications:message{
-    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
     Description = "Aimlock Loaded, Keybind 'Q'."
 }
 
@@ -98,7 +98,7 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/
 wait(2)
 
 notifications:message{
-    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
     Description = "Military Crates Located!"
 }
 
@@ -139,7 +139,7 @@ for _, part in ipairs(parts) do
         PartCrateEsp.Parent = workspace
 
         notifications:message{
-            Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
             Description = "Part Crates Located!"
         }
     end
@@ -166,14 +166,14 @@ wait(2)
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/Freecam.lua"), true))()
 
 notifications:message{
-    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
     Description = "Freecam Loaded, Keybind 'Y'."
 }
 
 wait(3)
 
 notifications:message{
-    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
     Description = "Loading Finished!"
 }
 
@@ -184,7 +184,7 @@ wait(2)
 
 game.Players.PlayerAdded:Connect(function(player)
     notifications:message{
-        Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+        Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
         Description = (player.DisplayName .. " Joined The Server!")
     }
 end)
@@ -193,7 +193,7 @@ end)
 
 game.Players.PlayerRemoving:Connect(function(player)
     notifications:message{
-        Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+        Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
         Description = (player.DisplayName .. " Left The Server!")
     }
 end)

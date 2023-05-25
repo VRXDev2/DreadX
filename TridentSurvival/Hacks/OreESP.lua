@@ -110,7 +110,7 @@ local function loadOres()
     workspace.DescendantAdded:Connect(onPartAdded)
 
     notifications:message{
-        Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+        Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
         Description = "OreESP Enabled."
     }
 end
@@ -122,7 +122,7 @@ local function disableOreESP()
         v:Destroy()
     end
     notifications:message{
-        Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+        Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
         Description = "OreESP Disabled."
     }
 end

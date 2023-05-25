@@ -37,7 +37,7 @@ local function toggleAdornments()
         Frame.TotemESPToggled.Text = "OFF"
         Frame.TotemESPToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
         notifications:message{
-            Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
             Description = "TC ESP Disabled."
         }
     else
@@ -46,7 +46,7 @@ local function toggleAdornments()
         Frame.TotemESPToggled.Text = "ON"
         Frame.TotemESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
         notifications:message{
-            Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
             Description = "TC ESP Enabled."
         }
     end
@@ -59,6 +59,6 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 end)
 
 notifications:message{
-    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
     Description = "TC ESP Loaded, Keybind 'U'."
 }
