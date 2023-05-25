@@ -129,7 +129,7 @@ function notifications:notify(options)
 			TextColor3 = theme.SecondaryText,
 			Font = Enum.Font.SourceSans,
 			TextSize = 18,
-			Position = UDim2.new(0, 70, 1, -60),
+			Position = UDim2.new(0, 70, 1, -30),
 			Size = UDim2.new(1, -70, 1, 0),
 			TextXAlignment = Enum.TextXAlignment.Left,
 			BackgroundTransparency = 1,
