@@ -1,3 +1,5 @@
+local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
+
 local UserInputService = game:getService("UserInputService")
 local toggle = true
 
@@ -7,6 +9,10 @@ local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
 local function loadPlayers()
 for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) do
     if v:IsA("MeshPart") or v:IsA("Part") then
+        if v.Name == "HumanoidRootPart" then
+            return
+        end
+
         local adornment = Instance.new("BoxHandleAdornment")
         adornment.Adornee = v
         adornment.AlwaysOnTop = true
@@ -22,6 +28,9 @@ for i, v in pairs(game.Workspace:GetChildren()) do
 
         for i, v in pairs(v:GetChildren()) do
             if v:IsA("Part") then
+                if v.Name == "HumanoidRootPart" then
+                    return
+                end
 
                 local adornment = Instance.new("BoxHandleAdornment")
                 adornment.Adornee = v
@@ -36,6 +45,9 @@ for i, v in pairs(game.Workspace:GetChildren()) do
         end
         for i, v in pairs(v:GetChildren()) do
             if v:IsA("MeshPart") then
+                if v.Name == "HumanoidRootPart" then
+                    return
+                end
 
                 local adornment = Instance.new("BoxHandleAdornment")
                 adornment.Adornee = v
@@ -49,6 +61,12 @@ for i, v in pairs(game.Workspace:GetChildren()) do
         end
     end
 end
+
+notifications:message{
+    Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+    Description = "PlayerESP Enabled."
+}
+
 end
 
 loadPlayers()
@@ -57,6 +75,10 @@ local function disablePlayerESP()
     for _, v in ipairs(workspace.YuriX.PlayerESPAdornee:GetDescendants()) do
         v:Destroy()
     end
+    notifications:message{
+        Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+        Description = "PlayerESP Disabled."
+    }
 end
 
 local function togglePlayerESP()

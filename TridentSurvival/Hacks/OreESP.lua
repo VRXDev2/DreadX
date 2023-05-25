@@ -1,4 +1,4 @@
-local notifications = loadstring(game:HttpGet(("https://pastebin.com/raw/gTvmWhEe"), true))()
+local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
 
 local UserInputService = game:getService("UserInputService")
 local toggle = true
@@ -110,9 +110,8 @@ local function loadOres()
     workspace.DescendantAdded:Connect(onPartAdded)
 
     notifications:message{
-        Title = "Yuri <font color='rgb(148, 0, 211)'>X</font><font color='rgb(252, 3, 69)'> - VRX#0001 Edit</font>",
-        Description = "OreESP loaded.",
-        Icon = 13535930665
+        Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+        Description = "OreESP Enabled."
     }
 end
 
@@ -122,6 +121,10 @@ local function disableOreESP()
     for _, v in ipairs(workspace.YuriX.OreESPAdornee:GetDescendants()) do
         v:Destroy()
     end
+    notifications:message{
+        Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+        Description = "OreESP Disabled."
+    }
 end
 
 local function toggleOreESP()

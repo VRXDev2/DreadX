@@ -1,3 +1,9 @@
+local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("YuriX").Background.Frame
+local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
+
+local RunService = game:GetService("RunService")
+
+--[[
 -- Sky </>
 local skybox = Instance.new("Sky")
 skybox.Parent = game.Lighting
@@ -8,7 +14,7 @@ skybox.SkyboxLf = "http://www.roblox.com/asset/?id=159454286"
 skybox.SkyboxRt = "http://www.roblox.com/asset/?id=159454300"
 skybox.SkyboxUp = "http://www.roblox.com/asset/?id=159454288"
 skybox.StarCount = 5000
-
+--]]
 
 -- Remove GC </>
 
@@ -21,15 +27,16 @@ local CrossHairX = Drawing.new("Circle")
 
 CrossHairX.Position = Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)
 CrossHairX.Color = Color3.fromRGB(255, 255, 255)
-CrossHairX.Transparency = 0.5
+CrossHairX.Transparency = 0.35
 CrossHairX.Thickness = 0.1
 CrossHairX.NumSides = 12
-CrossHairX.Radius = 3
+CrossHairX.Radius = 2.5
 CrossHairX.Visible = true
 CrossHairX.Filled = true
 
 -- CAS </>
 
+--[[
 local RunService = game:GetService("RunService")
 local workspace = game:GetService("Workspace")
 
@@ -45,10 +52,10 @@ for _, part in pairs(fpsArms:GetDescendants()) do
         part.Color = color
     end
 end
+--]]
 
 -- CGS </>
 
---[[
 local replicatedStorage = game:GetService("ReplicatedStorage")
 
 local handModels = replicatedStorage:WaitForChild("HandModels")
@@ -62,7 +69,6 @@ for _, part in pairs(handModels:GetDescendants()) do
         part.Color = color
     end
 end
---]]
 
 -- RR </>
 
@@ -83,6 +89,5 @@ end
 
 -- Always Day hack
 RunService.Stepped:Connect(function()
-    game:GetService("Lighting").TimeOfDay = 12
-	
+    game:GetService("Lighting").TimeOfDay = 14
 end)

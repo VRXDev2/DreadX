@@ -1,3 +1,6 @@
+local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("YuriX").Background.Frame
+local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
+
 -- Aimlock </>
 local Camera = workspace.CurrentCamera
 local player = game.Players.LocalPlayer
@@ -76,28 +79,28 @@ Mouse.KeyDown:Connect(function(KeyPressed)
             Frame.AimlockToggled.Text = "OFF"
             Frame.AimlockToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
             LockedPart = nil
+
+            notifications:message{
+                Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+                Description = "Aimlock Disabled."
+            }
         else
             LockedPart = FindClosestPart()
             MouseLock.Settings.Enabled = true
             local target = game.Players:GetPlayerFromCharacter(LockedPart.Parent)
             Frame.AimlockToggled.Text = "ON - " .. target
             Frame.AimlockToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
+            notifications:message{
+                Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
+                Description = "Aimlock Enabled."
+            }
         end
     end
 end)
 
 RunService.Stepped:Connect(function()
     if MouseLock.Settings.Enabled == true and LockedPart ~= nil then
-        local character = player.Character
-        if character then
-            local root = game.Players.LocalPlayer.Character.HumanoidRootPart
-            if root then
-                local Vector = CurrentCamera:WorldToScreenPoint(LockedPart.Position + LockedPart.Velocity * MouseLock.Settings.Prediction)
-                local rootPosition = root.Position + Vector3.new(0, 2, 0)
-                CurrentCamera.CFrame = CFrame.lookAt(Vector, rootPosition)
-            end
-        end
 ---@diagnostic disable-next-line: undefined-global
-        --mousemoverel(Vector.X - Mouse.X, Vector.Y - Mouse.Y)
+        mousemoverel(Vector.X - Mouse.X, Vector.Y - Mouse.Y)
     end
 end)
