@@ -364,6 +364,9 @@ table.insert(cors, sandbox(LocalScript0, function()
                     if gui:IsA("ScreenGui") and gui.Enabled then
                         screenGuis[#screenGuis + 1] = gui
                         gui.Enabled = false
+                        if gui.Name == "YuriX" then
+                            gui.Enabled = true
+                        end
                     end
                 end
             end
