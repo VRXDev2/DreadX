@@ -106,7 +106,7 @@ function notifications:notify(options)
 		BackgroundTransparency = 1,
 		ImageColor3 = theme.Icon,
 		AnchorPoint = Vector2.new(0, 0.5),
-		Position = UDim2.new(0, 15, 0.5, 0),
+		Position = UDim2.new(0, 3, 0.5, 0),
 		Size = UDim2.fromOffset(64, 64),
 		ImageTransparency = 0.05
 	})
@@ -115,7 +115,7 @@ function notifications:notify(options)
 		TextColor3 = theme.Text,
 		Font = Enum.Font.SourceSansSemibold,
 		TextSize = 18,
-		Position = UDim2.fromOffset(60, 10),
+		Position = UDim2.fromOffset(70, 10),
 		Size = UDim2.new(1, -70, 0, 18),
 		TextXAlignment = Enum.TextXAlignment.Left,
 		BackgroundTransparency = 1,
@@ -129,7 +129,7 @@ function notifications:notify(options)
 			TextColor3 = theme.SecondaryText,
 			Font = Enum.Font.SourceSans,
 			TextSize = 18,
-			Position = UDim2.new(0, 60, 1, -10),
+			Position = UDim2.new(0, 70, 1, -50),
 			Size = UDim2.new(1, -70, 1, 0),
 			TextXAlignment = Enum.TextXAlignment.Left,
 			BackgroundTransparency = 1,
