@@ -88,7 +88,7 @@ function notifications:notify(options)
 	end
 
 	local mainFrame = gui:object("Frame", {
-		Size = UDim2.fromOffset(480, (callbacksBool and 100) or 64),
+		Size = UDim2.fromOffset(480, (callbacksBool and 100) or 72),
 		Position = UDim2.new(1, -20, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
 		BackgroundColor3 = theme.Main,
@@ -107,7 +107,7 @@ function notifications:notify(options)
 		ImageColor3 = theme.Icon,
 		AnchorPoint = Vector2.new(0, 0.5),
 		Position = UDim2.new(0, 15, 0.5, 0),
-		Size = UDim2.fromOffset(30, 30),
+		Size = UDim2.fromOffset(64, 64),
 		ImageTransparency = 0.05
 	})
 
