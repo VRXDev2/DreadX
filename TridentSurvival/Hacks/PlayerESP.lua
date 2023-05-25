@@ -20,7 +20,7 @@ for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) 
         adornment.Parent = workspace.YuriX.PlayerESPAdornee
 
         if v.Name == "HumanoidRootPart" then
-            v:Destroy()
+            adornment:Destroy()
         end
     end
 end
@@ -40,7 +40,7 @@ for i, v in pairs(game.Workspace:GetChildren()) do
                 adornment.Parent = workspace.YuriX.PlayerESPAdornee
 
                 if v.Name == "HumanoidRootPart" then
-                    v:Destroy()
+                    adornment:Destroy()
                 end
             end
         end
@@ -58,7 +58,7 @@ for i, v in pairs(game.Workspace:GetChildren()) do
                 adornment.Parent = workspace.YuriX.PlayerESPAdornee
 
                 if v.Name == "HumanoidRootPart" then
-                    v:Destroy()
+                    adornment:Destroy()
                 end
             end
         end
@@ -76,7 +76,7 @@ loadPlayers()
 
 local function disablePlayerESP()
     for _, v in ipairs(workspace.YuriX.PlayerESPAdornee:GetDescendants()) do
-        v:Destroy()
+        adornment:Destroy()
     end
     notifications:message{
         Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
