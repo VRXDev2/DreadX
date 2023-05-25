@@ -437,7 +437,7 @@ table.insert(cors, sandbox(LocalScript0, function()
         RunService:BindToRenderStep("Freecam", Enum.RenderPriority.Camera.Value, StepFreecam)
         Input.StartCapture()
 
-        Frame.FreecamToggled.Text = "ON"
+        Frame.FreecamToggled.Text = "<b>ON</b>"
         Frame.FreecamToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
 
         notifications:message{
@@ -451,7 +451,7 @@ table.insert(cors, sandbox(LocalScript0, function()
         RunService:UnbindFromRenderStep("Freecam")
         PlayerState.Pop()
 
-        Frame.FreecamToggled.Text = "OFF"
+        Frame.FreecamToggled.Text = "<b>OFF</b>"
         Frame.FreecamToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
         
         notifications:message{

@@ -34,7 +34,7 @@ local function toggleAdornments()
     if adorned then
         removeAdornments()
         adorned = false
-        Frame.TotemESPToggled.Text = "OFF"
+        Frame.TotemESPToggled.Text = "<b>OFF</b>"
         Frame.TotemESPToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
         notifications:message{
             Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
@@ -43,7 +43,7 @@ local function toggleAdornments()
     else
         addAdornments()
         adorned = true
-        Frame.TotemESPToggled.Text = "ON"
+        Frame.TotemESPToggled.Text = "<b>ON</b>"
         Frame.TotemESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
         notifications:message{
             Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",

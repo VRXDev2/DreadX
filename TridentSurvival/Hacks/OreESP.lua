@@ -131,12 +131,12 @@ local function toggleOreESP()
     if toggle == false then
         toggle = true
         loadOres()
-        Frame.OreESPToggled.Text = "ON"
+        Frame.OreESPToggled.Text = "<b>ON</b>"
         Frame.OreESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
     elseif toggle == true then
         toggle = false
         disableOreESP()
-        Frame.OreESPToggled.Text = "OFF"
+        Frame.OreESPToggled.Text = "<b>OFF</b>"
         Frame.OreESPToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
     end
 end

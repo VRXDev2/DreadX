@@ -76,7 +76,7 @@ Mouse.KeyDown:Connect(function(KeyPressed)
     if KeyPressed == (MouseLock.Settings.Key) then
         if MouseLock.Settings.Enabled == true then
             MouseLock.Settings.Enabled = false
-            Frame.AimlockToggled.Text = "OFF"
+            Frame.AimlockToggled.Text = "<b>OFF</b>"
             Frame.AimlockToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
             LockedPart = nil
 
