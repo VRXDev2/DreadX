@@ -104,7 +104,7 @@ function notifications:notify(options)
 		AnchorPoint = Vector2.new(0, 0.5),
 		Position = UDim2.new(0, 15, 0.5, 0),
 		Size = UDim2.fromOffset(30, 30),
-		ImageTransparency = 1
+		ImageTransparency = 0.05
 	})
 
 	local title = content:object("TextLabel", {

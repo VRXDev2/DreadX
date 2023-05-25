@@ -26,16 +26,20 @@ notifications:message{
 
 wait(3)
 
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/GUI.lua"), true))()
+
+wait(0.5)
+
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Visuals.lua"), true))()
 
+--[[
 wait(0.5)
 
 game:GetService("ReplicatedStorage").Arrow.Trail.Lifetime = 20
 game:GetService("ReplicatedStorage").Arrow.Trail.Brightness = 100
-game:GetService("ReplicatedStorage").Arrow.Trail.Color = ColorSequence.new(
-    {ColorSequenceKeypoint.new(0, Color3.fromRGB(85, 0, 255)),
-     ColorSequenceKeypoint.new(1, Color3.fromRGB(229, 111, 255))})
+game:GetService("ReplicatedStorage").Arrow.Trail.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(229, 111, 255))})
 
+-]]
 wait(1)
 
 local config = Instance.new("Folder")
@@ -173,11 +177,8 @@ notifications:message{
     Description = "Loading Finished!"
 }
 
-wait(0.75)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/GUI.lua"), true))()
-
-wait(3)
+wait(2)
 
 -- Player Joined </>
 
