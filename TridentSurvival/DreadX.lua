@@ -1,6 +1,6 @@
 --Creator: VRX#0001
 
-local notifications = loadstring(game:HttpGet(("https://pastebin.com/raw/3yS4nz8r"), true))()
+local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
 
 notifications:message{
     Title = "Dread<font color='rgb(183, 11, 209)'>X</font>",
