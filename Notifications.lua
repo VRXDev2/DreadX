@@ -117,7 +117,7 @@ function notifications:notify(options)
 		BackgroundTransparency = 1,
 		Text = options.Title,
 		RichText = true,
-		TextTransparency = 1 --
+		TextTransparency = 1
 	})
 
 	local description; if options.Description then
