@@ -36,6 +36,10 @@ local function object(class, properties)
 		ts:Create(localObject, TweenInfo.new(0.25), mutations):Play()
 	end
 
+	function methods:tween2(mutations)
+		ts:Create(localObject, TweenInfo.new(1), mutations):Play()
+	end
+
 	methods.AbsoluteObject = localObject
 
 	return setmetatable(methods, {
@@ -84,7 +88,7 @@ function notifications:notify(options)
 	end
 
 	local mainFrame = gui:object("Frame", {
-		Size = UDim2.fromOffset(400, (callbacksBool and 100) or 56),
+		Size = UDim2.fromOffset(480, (callbacksBool and 100) or 64),
 		Position = UDim2.new(1, -20, 1, -10),
 		AnchorPoint = Vector2.new(1, 1),
 		BackgroundColor3 = theme.Main,
@@ -245,7 +249,7 @@ function notifications:notify(options)
 	mainFrame.Visible = true
 
 	spawn(function()
-		mainFrame:tween{BackgroundTransparency = 0, Position = UDim2.new(1, -20, 1, -20)}
+		mainFrame:tween2{BackgroundTransparency = 0, Position = UDim2.new(1, -20, 1, -20)}
 		task.wait(0.1)
 		if callbacksContainer then callbacksContainer:tween{BackgroundTransparency = 0} end
 		task.wait(0.15)
