@@ -2,13 +2,15 @@
 
 local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
 
+local loaded = false
+
 notifications:message{
     Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
     Description = "Updated, May 25 2023!"
 }
 
 ---@diagnostic disable-next-line: undefined-global
-setfpscap(0)
+setfpscap(300)
 
 wait(3)
 
@@ -76,42 +78,29 @@ wait(1)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/PlayerESP.lua"), true))()
 
-notifications:message{
-    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-    Description = "PlayerESP Loaded, Keybind 'P'."
-}
-
-wait(1.75)
+wait(1.5)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/Aimlock.lua"), true))()
-
-notifications:message{
-    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-    Description = "Aimlock Loaded, Keybind 'Q'."
-}
 
 wait(2)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/OreESP.lua"), true))()
 
-wait(2.5)
+wait(2)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/TotemESP.lua"), true))()
 
-wait(1)
+wait(1.75)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/StorageESP.lua"), true))()
 
-wait(1)
+wait(1.75)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/Freecam.lua"), true))()
 
-notifications:message{
-    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-    Description = "Freecam Loaded, Keybind 'Y'."
-}
-
 wait(3)
+
+loaded = true
 
 notifications:message{
     Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
@@ -124,17 +113,21 @@ wait(2)
 -- Player Joined
 
 game.Players.PlayerAdded:Connect(function(player)
-    notifications:message{
-        Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-        Description = (player.DisplayName .. " Joined The Server!")
-    }
+    if loaded then
+        notifications:message{
+            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
+            Description = (player.DisplayName .. " Joined The Server!")
+        }
+    end
 end)
 
 -- Player Left
 
 game.Players.PlayerRemoving:Connect(function(player)
-    notifications:message{
-        Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-        Description = (player.DisplayName .. " Left The Server!")
-    }
+    if loaded then
+        notifications:message{
+            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
+            Description = (player.DisplayName .. " Left The Server!")
+        }
+    end
 end)
