@@ -90,4 +90,7 @@ end
 -- Always Day hack
 RunService.Stepped:Connect(function()
     game:GetService("Lighting").TimeOfDay = 14
+    game:GetService("Lighting").Brightness = 1
+    game:GetService("Lighting").FogEnd = 2000
+    game:GetService("Lighting").GlobalShadows = false
 end)
