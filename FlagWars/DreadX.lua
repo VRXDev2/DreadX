@@ -50,7 +50,7 @@ toggles.Parent = workspace:WaitForChild("DreadX")
 
 wait(1)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/PlayerESP.lua"), true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/FlagWars/Hacks/PlayerESP.lua"), true))()
 
 --[[
 wait(1.5)
