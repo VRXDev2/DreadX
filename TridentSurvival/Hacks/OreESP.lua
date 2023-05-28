@@ -1,15 +1,13 @@
-local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
+local notifications = loadstring(game:HttpGet(
+    ("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
 
 local UserInputService = game:getService("UserInputService")
 local toggle = true
 
 local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
 
-
-
 local function loadOres()
     -- Nitrate Ores </>
-if toggle then
     local parts = workspace:GetDescendants()
     local meshes = {}
     for _, part in ipairs(parts) do
@@ -108,11 +106,10 @@ if toggle then
     end
 
     workspace.DescendantAdded:Connect(onPartAdded)
-end
 
     notifications:message{
         Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-        Description = "OreESP Enabled."
+        Description = "OreESP Loaded."
     }
 end
 
@@ -134,6 +131,11 @@ local function toggleOreESP()
         loadOres()
         Frame.OreESPToggled.Text = "<b>ON</b>"
         Frame.OreESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
+
+        notifications:message{
+            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
+            Description = "OreESP Enabled."
+        }
     elseif toggle == true then
         toggle = false
         disableOreESP()
