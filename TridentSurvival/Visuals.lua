@@ -1,4 +1,4 @@
-local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("YuriX").Background.Frame
+local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("DreadX").Background.Frame
 local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
 
 local RunService = game:GetService("RunService")

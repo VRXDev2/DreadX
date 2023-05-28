@@ -1,4 +1,4 @@
-local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("YuriX").Background.Frame
+local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("DreadX").Background.Frame
 local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
 
 -- FreeCam </>
@@ -364,7 +364,7 @@ table.insert(cors, sandbox(LocalScript0, function()
                     if gui:IsA("ScreenGui") and gui.Enabled then
                         screenGuis[#screenGuis + 1] = gui
                         gui.Enabled = false
-                        if gui.Name == "YuriX" then
+                        if gui.Name == "DreadX" then
                             gui.Enabled = true
                         end
                     end

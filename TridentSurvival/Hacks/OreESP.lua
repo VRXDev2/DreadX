@@ -4,7 +4,7 @@ local notifications = loadstring(game:HttpGet(
 local UserInputService = game:getService("UserInputService")
 local toggle = true
 
-local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
+local Frame = game.Players.LocalPlayer.PlayerGui.DreadX.Background.Frame
 
 -- Nitrate Ores </>
 local parts = workspace:GetDescendants()
@@ -20,7 +20,7 @@ for _, part in ipairs(parts) do
             NitrateEsp.Size = part.Size
             NitrateEsp.Transparency = 0.3
             NitrateEsp.Color = BrickColor.new("Institutional white")
-            NitrateEsp.Parent = workspace.YuriX.OreESPAdornee
+            NitrateEsp.Parent = workspace.DreadX.OreESPAdornee
         end
     end
 end
@@ -36,7 +36,7 @@ local function onPartAdded(part)
             UpdateNitrateEsp.Size = part.Size
             UpdateNitrateEsp.Transparency = 0.3
             UpdateNitrateEsp.Color = BrickColor.new("Institutional white")
-            UpdateNitrateEsp.Parent = workspace.YuriX.OreESPAdornee
+            UpdateNitrateEsp.Parent = workspace.DreadX.OreESPAdornee
         end
     end
 end
@@ -59,7 +59,7 @@ for _, part in ipairs(parts) do
             IronEsp.Size = part.Size
             IronEsp.Transparency = 0.3
             IronEsp.Color = BrickColor.new("Burlap")
-            IronEsp.Parent = workspace.YuriX.OreESPAdornee
+            IronEsp.Parent = workspace.DreadX.OreESPAdornee
         end
     end
 end
@@ -74,7 +74,7 @@ local function onPartAdded(part)
             UpdateIronEsp.Size = part.Size
             UpdateIronEsp.Transparency = 0.3
             UpdateIronEsp.Color = BrickColor.new("Burlap")
-            UpdateIronEsp.Parent = workspace.YuriX.OreESPAdornee
+            UpdateIronEsp.Parent = workspace.DreadX.OreESPAdornee
         end
     end
 end
@@ -97,7 +97,7 @@ local function adornStoneOre(part)
                 StoneEsp.Size = part.Size
                 StoneEsp.Transparency = 0.3
                 StoneEsp.Color = BrickColor.new("Grey")
-                StoneEsp.Parent = workspace.YuriX.OreESPAdornee
+                StoneEsp.Parent = workspace.DreadX.OreESPAdornee
             end
         end
     end
@@ -119,7 +119,7 @@ notifications:message{
 }
 
 local function disableOreESP()
-    for _, v in ipairs(workspace.YuriX.OreESPAdornee:GetDescendants()) do
+    for _, v in ipairs(workspace.DreadX.OreESPAdornee:GetDescendants()) do
         v:Destroy()
     end
     notifications:message{

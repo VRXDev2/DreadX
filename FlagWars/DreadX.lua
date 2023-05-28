@@ -31,20 +31,12 @@ notifications:message{
 
 wait(3)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/GUI.lua"), true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/FlagWars/GUI.lua"), true))()
 
-wait(0.5)
+--wait(0.5)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Visuals.lua"), true))()
+--loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Visuals.lua"), true))()
 
---[[
-wait(0.5)
-
-game:GetService("ReplicatedStorage").Arrow.Trail.Lifetime = 20
-game:GetService("ReplicatedStorage").Arrow.Trail.Brightness = 100
-game:GetService("ReplicatedStorage").Arrow.Trail.Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(229, 111, 255))})
-
--]]
 wait(1)
 
 local config = Instance.new("Folder")
@@ -55,29 +47,12 @@ local toggles = Instance.new("Folder")
 toggles.Name = "Toggles"
 toggles.Parent = workspace:WaitForChild("DreadX")
 
-local OreESPAdornee = Instance.new("Folder")
-OreESPAdornee.Name = "OreESPAdornee"
-OreESPAdornee.Parent = workspace:WaitForChild("DreadX")
-
-local PlayerESPAdornee = Instance.new("Folder")
-PlayerESPAdornee.Name = "PlayerESPAdornee"
-PlayerESPAdornee.Parent = workspace:WaitForChild("DreadX")
-
-local toggleAimlock = Instance.new("BoolValue")
-toggleAimlock.Name = "toggleAimlock"
-toggleAimlock.Parent = workspace.DreadX:WaitForChild("Toggles")
-
-local toggleFreecam = Instance.new("BoolValue")
-toggleFreecam.Name = "toggleFreecam"
-toggleFreecam.Parent = workspace.DreadX:WaitForChild("Toggles")
-
-print(workspace.DreadX.Toggles:WaitForChild("toggleAimlock").Value)
-print(workspace.DreadX.Toggles:WaitForChild("toggleAimlock").Value)
 
 wait(1)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/PlayerESP.lua"), true))()
 
+--[[
 wait(1.5)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/Aimlock.lua"), true))()
@@ -98,7 +73,9 @@ wait(1.75)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/Freecam.lua"), true))()
 
-wait(3)
+--]]
+
+wait(2)
 
 loaded = true
 
@@ -108,7 +85,7 @@ notifications:message{
 }
 
 
-wait(2)
+wait(5)
 
 -- Player Joined
 

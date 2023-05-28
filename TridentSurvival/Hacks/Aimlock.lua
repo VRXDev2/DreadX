@@ -1,4 +1,4 @@
-local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("YuriX").Background.Frame
+local Frame = game.Players.LocalPlayer.PlayerGui:WaitForChild("DreadX").Background.Frame
 local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
 
 -- Aimlock </>
@@ -15,7 +15,7 @@ _G.CircleThickness = 0
 
 ---@diagnostic disable-next-line: undefined-global
 local FOVCircle = Drawing.new("Circle")
-local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
+local Frame = game.Players.LocalPlayer.PlayerGui.DreadX.Background.Frame
 
 
 FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
