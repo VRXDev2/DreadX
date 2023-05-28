@@ -12,7 +12,7 @@ local meshes = {}
 for _, part in ipairs(parts) do
     if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material ==
         Enum.Material.Slate then
-        if toggle then
+        if toggle == true then
             local NitrateEsp = Instance.new("BoxHandleAdornment")
             NitrateEsp.Adornee = part
             NitrateEsp.AlwaysOnTop = true
@@ -28,7 +28,7 @@ end
 local function onPartAdded(part)
     if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material ==
         Enum.Material.Slate then
-        if toggle then
+        if toggle == true then
             local UpdateNitrateEsp = Instance.new("BoxHandleAdornment")
             UpdateNitrateEsp.Adornee = part
             UpdateNitrateEsp.AlwaysOnTop = true
@@ -51,7 +51,7 @@ local parts = workspace:GetDescendants()
 local meshes = {}
 for _, part in ipairs(parts) do
     if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Burlap") and part.Material == Enum.Material.Slate then
-        if toggle then
+        if toggle == true then
             local IronEsp = Instance.new("BoxHandleAdornment")
             IronEsp.Adornee = part
             IronEsp.AlwaysOnTop = true
@@ -66,7 +66,7 @@ end
 
 local function onPartAdded(part)
     if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Burlap") and part.Material == Enum.Material.Slate then
-        if toggle then
+        if toggle == true then
             local UpdateIronEsp = Instance.new("BoxHandleAdornment")
             UpdateIronEsp.Adornee = part
             UpdateIronEsp.AlwaysOnTop = true
@@ -87,7 +87,7 @@ wait(0.25)
 
 local function adornStoneOre(part)
     if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Flint") and part.Material == Enum.Material.Limestone then
-        if toggle then
+        if toggle == true then
             local parent = part.Parent
             if parent and parent:IsA("Model") and #parent:GetChildren() == 1 then
                 local StoneEsp = Instance.new("BoxHandleAdornment")

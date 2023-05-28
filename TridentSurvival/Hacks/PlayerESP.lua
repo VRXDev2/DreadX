@@ -7,7 +7,7 @@ local Frame = game.Players.LocalPlayer.PlayerGui.DreadX.Background.Frame
 
 for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) do
     if v:IsA("MeshPart") or v:IsA("Part") then
-        if toggle then
+        if toggle == true then
             local adornment = Instance.new("BoxHandleAdornment")
             adornment.Adornee = v
             adornment.AlwaysOnTop = true
@@ -26,7 +26,7 @@ end
 
 for i, v in pairs(game.Workspace:GetChildren()) do
     if v:FindFirstChild("Head") then
-        if toggle then
+        if toggle == true then
             for i, v in pairs(v:GetChildren()) do
                 if v:IsA("Part") then
 
