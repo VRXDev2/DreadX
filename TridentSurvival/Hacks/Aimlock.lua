@@ -87,8 +87,7 @@ Mouse.KeyDown:Connect(function(KeyPressed)
         else
             LockedPart = FindClosestPart()
             MouseLock.Settings.Enabled = true
-            local target = game.Players:GetPlayerFromCharacter(LockedPart.Parent)
-            Frame.AimlockToggled.Text = "ON - " .. target
+            Frame.AimlockToggled.Text = "ON"
             Frame.AimlockToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
             notifications:message{
                 Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
