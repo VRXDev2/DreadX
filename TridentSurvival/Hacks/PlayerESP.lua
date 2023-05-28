@@ -5,10 +5,9 @@ local toggle = true
 
 local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
 
-local function loadPlayers()
-    for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) do
-        if v:IsA("MeshPart") or v:IsA("Part") then
-
+for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) do
+    if v:IsA("MeshPart") or v:IsA("Part") then
+        if toggle then
             local adornment = Instance.new("BoxHandleAdornment")
             adornment.Adornee = v
             adornment.AlwaysOnTop = true
@@ -23,9 +22,11 @@ local function loadPlayers()
             end
         end
     end
-    for i, v in pairs(game.Workspace:GetChildren()) do
-        if v:FindFirstChild("Head") then
+end
 
+for i, v in pairs(game.Workspace:GetChildren()) do
+    if v:FindFirstChild("Head") then
+        if toggle then
             for i, v in pairs(v:GetChildren()) do
                 if v:IsA("Part") then
 
@@ -62,15 +63,12 @@ local function loadPlayers()
             end
         end
     end
-
-    notifications:message{
-        Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-        Description = "PlayerESP Enabled."
-    }
-
 end
 
-loadPlayers()
+notifications:message{
+    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
+    Description = "PlayerESP Enabled."
+}
 
 local function disablePlayerESP()
     for _, v in ipairs(workspace.YuriX.PlayerESPAdornee:GetDescendants()) do
@@ -85,7 +83,6 @@ end
 local function togglePlayerESP()
     if toggle == false then
         toggle = true
-        loadPlayers()
         Frame.PlayerESPToggled.Text = "<b>ON</b>"
         Frame.PlayerESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
     elseif toggle == true then

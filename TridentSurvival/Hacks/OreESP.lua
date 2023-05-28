@@ -6,13 +6,13 @@ local toggle = true
 
 local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
 
-local function loadOres()
-    -- Nitrate Ores </>
-    local parts = workspace:GetDescendants()
-    local meshes = {}
-    for _, part in ipairs(parts) do
-        if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material ==
-            Enum.Material.Slate then
+-- Nitrate Ores </>
+local parts = workspace:GetDescendants()
+local meshes = {}
+for _, part in ipairs(parts) do
+    if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material ==
+        Enum.Material.Slate then
+        if toggle then
             local NitrateEsp = Instance.new("BoxHandleAdornment")
             NitrateEsp.Adornee = part
             NitrateEsp.AlwaysOnTop = true
@@ -21,13 +21,14 @@ local function loadOres()
             NitrateEsp.Transparency = 0.3
             NitrateEsp.Color = BrickColor.new("Institutional white")
             NitrateEsp.Parent = workspace.YuriX.OreESPAdornee
-
         end
     end
+end
 
-    local function onPartAdded(part)
-        if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material ==
-            Enum.Material.Slate then
+local function onPartAdded(part)
+    if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material ==
+        Enum.Material.Slate then
+        if toggle then
             local UpdateNitrateEsp = Instance.new("BoxHandleAdornment")
             UpdateNitrateEsp.Adornee = part
             UpdateNitrateEsp.AlwaysOnTop = true
@@ -38,17 +39,19 @@ local function loadOres()
             UpdateNitrateEsp.Parent = workspace.YuriX.OreESPAdornee
         end
     end
+end
 
-    workspace.DescendantAdded:Connect(onPartAdded)
+workspace.DescendantAdded:Connect(onPartAdded)
 
-    wait(0.25)
+wait(0.25)
 
-    -- Iron Ores </>
+-- Iron Ores </>
 
-    local parts = workspace:GetDescendants()
-    local meshes = {}
-    for _, part in ipairs(parts) do
-        if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Burlap") and part.Material == Enum.Material.Slate then
+local parts = workspace:GetDescendants()
+local meshes = {}
+for _, part in ipairs(parts) do
+    if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Burlap") and part.Material == Enum.Material.Slate then
+        if toggle then
             local IronEsp = Instance.new("BoxHandleAdornment")
             IronEsp.Adornee = part
             IronEsp.AlwaysOnTop = true
@@ -57,12 +60,13 @@ local function loadOres()
             IronEsp.Transparency = 0.3
             IronEsp.Color = BrickColor.new("Burlap")
             IronEsp.Parent = workspace.YuriX.OreESPAdornee
-
         end
     end
+end
 
-    local function onPartAdded(part)
-        if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Burlap") and part.Material == Enum.Material.Slate then
+local function onPartAdded(part)
+    if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Burlap") and part.Material == Enum.Material.Slate then
+        if toggle then
             local UpdateIronEsp = Instance.new("BoxHandleAdornment")
             UpdateIronEsp.Adornee = part
             UpdateIronEsp.AlwaysOnTop = true
@@ -73,16 +77,17 @@ local function loadOres()
             UpdateIronEsp.Parent = workspace.YuriX.OreESPAdornee
         end
     end
+end
 
-    workspace.DescendantAdded:Connect(onPartAdded)
+workspace.DescendantAdded:Connect(onPartAdded)
 
-    wait(0.25)
+wait(0.25)
 
-    -- Stone Ores </>
+-- Stone Ores </>
 
-    local function adornStoneOre(part)
-        if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Flint") and part.Material ==
-            Enum.Material.Limestone then
+local function adornStoneOre(part)
+    if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Flint") and part.Material == Enum.Material.Limestone then
+        if toggle then
             local parent = part.Parent
             if parent and parent:IsA("Model") and #parent:GetChildren() == 1 then
                 local StoneEsp = Instance.new("BoxHandleAdornment")
@@ -96,24 +101,22 @@ local function loadOres()
             end
         end
     end
-
-    local function onPartAdded(part)
-        adornStoneOre(part)
-    end
-
-    for _, part in ipairs(workspace:GetDescendants()) do
-        adornStoneOre(part)
-    end
-
-    workspace.DescendantAdded:Connect(onPartAdded)
-
-    notifications:message{
-        Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-        Description = "OreESP Loaded."
-    }
 end
 
-loadOres()
+local function onPartAdded(part)
+    adornStoneOre(part)
+end
+
+for _, part in ipairs(workspace:GetDescendants()) do
+    adornStoneOre(part)
+end
+
+workspace.DescendantAdded:Connect(onPartAdded)
+
+notifications:message{
+    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
+    Description = "OreESP Loaded."
+}
 
 local function disableOreESP()
     for _, v in ipairs(workspace.YuriX.OreESPAdornee:GetDescendants()) do
@@ -128,7 +131,6 @@ end
 local function toggleOreESP()
     if toggle == false then
         toggle = true
-        loadOres()
         Frame.OreESPToggled.Text = "<b>ON</b>"
         Frame.OreESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
 
