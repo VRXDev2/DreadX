@@ -39,7 +39,7 @@ for i, v in pairs(game.Workspace:GetChildren()) do
                     adornment.Size = v.Size
                     adornment.Color = BrickColor.new("Dark red")
                     adornment.Transparency = 0.55
-                    adornment.Parent = workspace.DreadX.PlayerESPAdornee
+                    adornment.Parent = workspace.DreadX:WaitForChild("PlayerESPAdornee")
 
                     if v.Name == "HumanoidRootPart" then
                         adornment:Destroy()
@@ -56,7 +56,7 @@ for i, v in pairs(game.Workspace:GetChildren()) do
                     adornment.Size = v.Size
                     adornment.Color = BrickColor.new("Bright green")
                     adornment.Transparency = 0.55
-                    adornment.Parent = workspace.DreadX.PlayerESPAdornee
+                    adornment.Parent = workspace.DreadX:WaitForChild("PlayerESPAdornee")
 
                     if v.Name == "HumanoidRootPart" then
                         adornment:Destroy()
