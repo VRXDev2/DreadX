@@ -7,48 +7,9 @@ local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
 
 
 if toggle then
-    
-for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) do
-    if v:IsA("MeshPart") or v:IsA("Part") then
-
-        local adornment = Instance.new("BoxHandleAdornment")
-        adornment.Adornee = v
-        adornment.AlwaysOnTop = true
-        adornment.ZIndex = 1
-        adornment.Size = v.Size
-        adornment.Color = BrickColor.new("Bright green")
-        adornment.Transparency = 0.55
-        adornment.Parent = workspace.YuriX.PlayerESPAdornee
-
-        if v.Name == "HumanoidRootPart" then
-            adornment:Destroy()
-        end
-    end
-end
-for i, v in pairs(game.Workspace:GetChildren()) do
-    if v:FindFirstChild("Head") then
-
-        for i, v in pairs(v:GetChildren()) do
-            if v:IsA("Part") then
-
-                local adornment = Instance.new("BoxHandleAdornment")
-                adornment.Adornee = v
-                adornment.AlwaysOnTop = true
-                adornment.ZIndex = 1
-                adornment.Size = v.Size
-                adornment.Color = BrickColor.new("Dark red")
-                adornment.Transparency = 0.55
-                adornment.Parent = workspace.YuriX.PlayerESPAdornee
-
-                if v.Name == "HumanoidRootPart" then
-                    adornment:Destroy()
-                end
-            end
-        end
-        for i, v in pairs(v:GetChildren()) do
-            if v:IsA("MeshPart") then
-
-
+    function loadPlayers()
+        for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) do
+            if v:IsA("MeshPart") or v:IsA("Part") then
                 local adornment = Instance.new("BoxHandleAdornment")
                 adornment.Adornee = v
                 adornment.AlwaysOnTop = true
@@ -57,14 +18,50 @@ for i, v in pairs(game.Workspace:GetChildren()) do
                 adornment.Color = BrickColor.new("Bright green")
                 adornment.Transparency = 0.55
                 adornment.Parent = workspace.YuriX.PlayerESPAdornee
-
+    
                 if v.Name == "HumanoidRootPart" then
                     adornment:Destroy()
                 end
             end
         end
+        for i, v in pairs(game.Workspace:GetChildren()) do
+            if v:FindFirstChild("Head") then
+    
+                for i, v in pairs(v:GetChildren()) do
+                    if v:IsA("Part") then
+                        local adornment = Instance.new("BoxHandleAdornment")
+                        adornment.Adornee = v
+                        adornment.AlwaysOnTop = true
+                        adornment.ZIndex = 1
+                        adornment.Size = v.Size
+                        adornment.Color = BrickColor.new("Dark red")
+                        adornment.Transparency = 0.55
+                        adornment.Parent = workspace.YuriX.PlayerESPAdornee
+    
+                        if v.Name == "HumanoidRootPart" then
+                            adornment:Destroy()
+                        end
+                    end
+                end
+                for i, v in pairs(v:GetChildren()) do
+                    if v:IsA("MeshPart") then
+                        local adornment = Instance.new("BoxHandleAdornment")
+                        adornment.Adornee = v
+                        adornment.AlwaysOnTop = true
+                        adornment.ZIndex = 1
+                        adornment.Size = v.Size
+                        adornment.Color = BrickColor.new("Bright green")
+                        adornment.Transparency = 0.55
+                        adornment.Parent = workspace.YuriX.PlayerESPAdornee
+    
+                        if v.Name == "HumanoidRootPart" then
+                            adornment:Destroy()
+                        end
+                    end
+                end
+            end
+        end
     end
-end
 
 end
 
