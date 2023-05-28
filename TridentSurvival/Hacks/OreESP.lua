@@ -5,11 +5,9 @@ local toggle = true
 
 local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
 
+if toggle then
 
-
-local function loadOres()
-    -- Nitrate Ores </>
-
+    -- Nitrate Ores
     local parts = workspace:GetDescendants()
     local meshes = {}
     for _, part in ipairs(parts) do
@@ -45,8 +43,7 @@ local function loadOres()
 
     wait(0.25)
 
-    -- Iron Ores </>
-
+    -- Iron Ores
     local parts = workspace:GetDescendants()
     local meshes = {}
     for _, part in ipairs(parts) do
@@ -80,8 +77,7 @@ local function loadOres()
 
     wait(0.25)
 
-    -- Stone Ores </>
-
+    -- Stone Ores
     local function adornStoneOre(part)
         if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Flint") and part.Material ==
             Enum.Material.Limestone then
@@ -108,14 +104,8 @@ local function loadOres()
     end
 
     workspace.DescendantAdded:Connect(onPartAdded)
-
-    notifications:message{
-        Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-        Description = "OreESP Enabled."
-    }
 end
 
-loadOres()
 
 local function disableOreESP()
     for _, v in ipairs(workspace.YuriX.OreESPAdornee:GetDescendants()) do
@@ -130,9 +120,14 @@ end
 local function toggleOreESP()
     if toggle == false then
         toggle = true
-        loadOres()
+
         Frame.OreESPToggled.Text = "<b>ON</b>"
         Frame.OreESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
+        
+        notifications:message{
+            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
+            Description = "OreESP Enabled."
+        }
     elseif toggle == true then
         toggle = false
         disableOreESP()

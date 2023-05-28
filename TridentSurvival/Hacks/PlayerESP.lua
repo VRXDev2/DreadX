@@ -6,7 +6,8 @@ local toggle = true
 local Frame = game.Players.LocalPlayer.PlayerGui.YuriX.Background.Frame
 
 
-local function loadPlayers()
+if toggle then
+    
 for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) do
     if v:IsA("MeshPart") or v:IsA("Part") then
 
@@ -65,14 +66,8 @@ for i, v in pairs(game.Workspace:GetChildren()) do
     end
 end
 
-notifications:message{
-    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-    Description = "PlayerESP Enabled."
-}
-
 end
 
-loadPlayers()
 
 local function disablePlayerESP()
     for _, v in ipairs(workspace.YuriX.PlayerESPAdornee:GetDescendants()) do
@@ -87,9 +82,13 @@ end
 local function togglePlayerESP()
     if toggle == false then
         toggle = true
-        loadPlayers()
         Frame.PlayerESPToggled.Text = "<b>ON</b>"
         Frame.PlayerESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
+
+        notifications:message{
+            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
+            Description = "PlayerESP Enabled."
+        }
     elseif toggle == true then
         toggle = false
         disablePlayerESP()
