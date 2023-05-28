@@ -47,6 +47,9 @@ local toggles = Instance.new("Folder")
 toggles.Name = "Toggles"
 toggles.Parent = workspace:WaitForChild("DreadX")
 
+local PlayerESPAdornee = Instance.new("Folder")
+PlayerESPAdornee.Name = "PlayerESPAdornee"
+PlayerESPAdornee.Parent = workspace:WaitForChild("DreadX")
 
 wait(1)
 
