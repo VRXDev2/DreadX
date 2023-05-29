@@ -111,6 +111,7 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
     end
 end)
 
+--[[
 while true do
     if loaded then
         if toggle then
@@ -119,4 +120,4 @@ while true do
     end
     wait(2.5)
 end
-
+]]
