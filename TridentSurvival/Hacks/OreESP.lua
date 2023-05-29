@@ -11,7 +11,8 @@ local Frame = game.Players.LocalPlayer.PlayerGui.DreadX.Background.Frame
 local parts = workspace:GetDescendants()
 local meshes = {}
 for _, part in ipairs(parts) do
-    if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material == Enum.Material.Slate then
+    if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material ==
+        Enum.Material.Slate then
         local NitrateEsp = Instance.new("BoxHandleAdornment")
         NitrateEsp.Adornee = part
         NitrateEsp.AlwaysOnTop = true
@@ -19,7 +20,7 @@ for _, part in ipairs(parts) do
         NitrateEsp.Size = part.Size
         NitrateEsp.Transparency = 0.3
         NitrateEsp.Color = BrickColor.new("Institutional white")
-        NitrateEsp.Parent = workspace
+        NitrateEsp.Parent = workspace.DreadX.OreESPAdornee
 
         notifications:message{
             Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> - v5.0",
@@ -29,15 +30,18 @@ for _, part in ipairs(parts) do
 end
 
 local function onPartAdded(part)
-    if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material == Enum.Material.Slate then
-        local UpdateNitrateEsp = Instance.new("BoxHandleAdornment")
-        UpdateNitrateEsp.Adornee = part
-        UpdateNitrateEsp.AlwaysOnTop = true
-        UpdateNitrateEsp.ZIndex = 0
-        UpdateNitrateEsp.Size = part.Size
-        UpdateNitrateEsp.Transparency = 0.3
-        UpdateNitrateEsp.Color = BrickColor.new("Institutional white")
-        UpdateNitrateEsp.Parent = workspace
+    if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material ==
+        Enum.Material.Slate then
+        if toggle then
+            local UpdateNitrateEsp = Instance.new("BoxHandleAdornment")
+            UpdateNitrateEsp.Adornee = part
+            UpdateNitrateEsp.AlwaysOnTop = true
+            UpdateNitrateEsp.ZIndex = 0
+            UpdateNitrateEsp.Size = part.Size
+            UpdateNitrateEsp.Transparency = 0.3
+            UpdateNitrateEsp.Color = BrickColor.new("Institutional white")
+            UpdateNitrateEsp.Parent = workspace.DreadX.OreESPAdornee
+        end
     end
 end
 
@@ -58,7 +62,7 @@ for _, part in ipairs(parts) do
         IronEsp.Size = part.Size
         IronEsp.Transparency = 0.3
         IronEsp.Color = BrickColor.new("Burlap")
-        IronEsp.Parent = workspace
+        IronEsp.Parent = workspace.DreadX.OreESPAdornee
 
         notifications:message{
             Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> - v5.0",
@@ -69,14 +73,17 @@ end
 
 local function onPartAdded(part)
     if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Burlap") and part.Material == Enum.Material.Slate then
-        local UpdateIronEsp = Instance.new("BoxHandleAdornment")
-        UpdateIronEsp.Adornee = part
-        UpdateIronEsp.AlwaysOnTop = true
-        UpdateIronEsp.ZIndex = 0
-        UpdateIronEsp.Size = part.Size
-        UpdateIronEsp.Transparency = 0.3
-        UpdateIronEsp.Color = BrickColor.new("Burlap")
-        UpdateIronEsp.Parent = workspace
+        if toggle then
+            local UpdateIronEsp = Instance.new("BoxHandleAdornment")
+            UpdateIronEsp.Adornee = part
+            UpdateIronEsp.AlwaysOnTop = true
+            UpdateIronEsp.ZIndex = 0
+            UpdateIronEsp.Size = part.Size
+            UpdateIronEsp.Transparency = 0.3
+            UpdateIronEsp.Color = BrickColor.new("Burlap")
+            UpdateIronEsp.Parent = workspace.DreadX.OreESPAdornee
+        end
+
     end
 end
 
@@ -100,17 +107,21 @@ local function adornStoneOre(part)
             StoneEsp.Size = part.Size
             StoneEsp.Transparency = 0.3
             StoneEsp.Color = BrickColor.new("Grey")
-            StoneEsp.Parent = workspace
+            StoneEsp.Parent = workspace.DreadX.OreESPAdornee
         end
     end
 end
 
 local function onPartAdded(part)
-    adornStoneOre(part)
+    if toggle then
+        adornStoneOre(part)
+    end
 end
 
 for _, part in ipairs(workspace:GetDescendants()) do
-    adornStoneOre(part)
+    if toggle then
+        adornStoneOre(part)
+    end
 end
 
 workspace.DescendantAdded:Connect(onPartAdded)

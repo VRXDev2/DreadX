@@ -71,14 +71,11 @@ local toggleFreecam = Instance.new("BoolValue")
 toggleFreecam.Name = "toggleFreecam"
 toggleFreecam.Parent = workspace.DreadX:WaitForChild("Toggles")
 
-print(workspace.DreadX.Toggles:WaitForChild("toggleAimlock").Value)
-print(workspace.DreadX.Toggles:WaitForChild("toggleAimlock").Value)
-
 wait(1)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/PlayerESP.lua"), true))()
 
-wait(10)
+wait(1)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/Aimlock.lua"), true))()
 
