@@ -1,4 +1,3 @@
-local RunService = game:GetService("RunService")
 local notifications = loadstring(game:HttpGet(
     ("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
 
@@ -113,8 +112,10 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
 end)
 
 while true do
-    if toggle then
-        updateESP()
+    if loaded then
+        if toggle then
+            updateESP()
+        end
     end
     wait(2.5)
 end
