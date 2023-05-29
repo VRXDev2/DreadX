@@ -18,7 +18,7 @@ local function loadPlayers()
             adornment.Size = v.Size
             adornment.Color = BrickColor.new("Bright green")
             adornment.Transparency = 0.3
-            adornment.Parent = v
+            adornment.Parent = workspace.DreadX.PlayerESPAdornee
 
             if v.Name == "HumanoidRootPart" then
                 adornment:Destroy()
@@ -38,7 +38,7 @@ local function loadPlayers()
                     adornment.Size = v.Size
                     adornment.Color = BrickColor.new("Really red")
                     adornment.Transparency = 0.3
-                    adornment.Parent = v
+                    adornment.Parent = workspace.DreadX.PlayerESPAdornee
 
                     if v.Name == "HumanoidRootPart" then
                         adornment:Destroy()
@@ -55,7 +55,7 @@ local function loadPlayers()
                     adornment.Size = v.Size
                     adornment.Color = BrickColor.new("Bright green")
                     adornment.Transparency = 0.3
-                    adornment.Parent = v
+                    adornment.Parent = workspace.DreadX.PlayerESPAdornee
 
                     if v.Name == "HumanoidRootPart" then
                         adornment:Destroy()
