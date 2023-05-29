@@ -1,3 +1,4 @@
+local RunService = game:GetService("RunService")
 local notifications = loadstring(game:HttpGet(
     ("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
 
@@ -6,56 +7,60 @@ local toggle = true
 
 local Frame = game.Players.LocalPlayer.PlayerGui.DreadX.Background.Frame
 
-for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) do
-    if v:IsA("MeshPart") or v:IsA("Part") then
-        local adornment = Instance.new("BoxHandleAdornment")
-        adornment.Adornee = v
-        adornment.AlwaysOnTop = true
-        adornment.ZIndex = 1
-        adornment.Size = v.Size
-        adornment.Color = BrickColor.new("Bright green")
-        adornment.Transparency = 0.55
-        adornment.Parent = workspace.DreadX.PlayerESPAdornee
+local function loadPlayers()
 
-        if v.Name == "HumanoidRootPart" then
-            adornment:Destroy()
-        end
-    end
-end
+    for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) do
+        if v:IsA("MeshPart") or v:IsA("Part") then
+            local adornment = Instance.new("BoxHandleAdornment")
+            adornment.Adornee = v
+            adornment.AlwaysOnTop = true
+            adornment.ZIndex = 1
+            adornment.Size = v.Size
+            adornment.Color = BrickColor.new("Bright green")
+            adornment.Transparency = 0.3
+            adornment.Parent = v
 
-for i, v in pairs(game.Workspace:GetChildren()) do
-    if v:FindFirstChild("Head") then
-        for i, v in pairs(v:GetChildren()) do
-            if v:IsA("Part") then
-                local adornment = Instance.new("BoxHandleAdornment")
-                adornment.Adornee = v
-                adornment.AlwaysOnTop = true
-                adornment.ZIndex = 1
-                adornment.Size = v.Size
-                adornment.Color = BrickColor.new("Dark red")
-                adornment.Transparency = 0.55
-                adornment.Parent = workspace.DreadX.PlayerESPAdornee
-
-                if v.Name == "HumanoidRootPart" then
-                    adornment:Destroy()
-                end
+            if v.Name == "HumanoidRootPart" then
+                v:Destroy()
             end
         end
-        for i, v in pairs(v:GetChildren()) do
-            if v:IsA("MeshPart") then
-                local adornment = Instance.new("BoxHandleAdornment")
-                adornment.Adornee = v
-                adornment.AlwaysOnTop = true
-                adornment.ZIndex = 1
-                adornment.Size = v.Size
-                adornment.Color = BrickColor.new("Bright green")
-                adornment.Transparency = 0.55
-                adornment.Parent = workspace.DreadX.PlayerESPAdornee
+    end
+    for i, v in pairs(game.Workspace:GetChildren()) do
+        if v:FindFirstChild("Head") then
 
-                if v.Name == "HumanoidRootPart" then
-                    adornment:Destroy()
+            for i, v in pairs(v:GetChildren()) do
+                if v:IsA("Part") then
+
+                    local adornment = Instance.new("BoxHandleAdornment")
+                    adornment.Adornee = v
+                    adornment.AlwaysOnTop = true
+                    adornment.ZIndex = 1
+                    adornment.Size = v.Size
+                    adornment.Color = BrickColor.new("Crimson")
+                    adornment.Transparency = 0.3
+                    adornment.Parent = v
+
+                    if v.Name == "HumanoidRootPart" then
+                        v:Destroy()
+                    end
                 end
+            end
+            for i, v in pairs(v:GetChildren()) do
+                if v:IsA("MeshPart") then
 
+                    local adornment = Instance.new("BoxHandleAdornment")
+                    adornment.Adornee = v
+                    adornment.AlwaysOnTop = true
+                    adornment.ZIndex = 1
+                    adornment.Size = v.Size
+                    adornment.Color = BrickColor.new("Bright green")
+                    adornment.Transparency = 0.3
+                    adornment.Parent = v
+
+                    if v.Name == "HumanoidRootPart" then
+                        v:Destroy()
+                    end
+                end
             end
         end
     end
@@ -76,9 +81,16 @@ local function disablePlayerESP()
     }
 end
 
+local function updateESP()
+    disablePlayerESP()
+    wait(1.5)
+    loadPlayers()
+end
+
 local function togglePlayerESP()
     if toggle == false then
         toggle = true
+        loadPlayers()
         Frame.PlayerESPToggled.Text = "<b>ON</b>"
         Frame.PlayerESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
     elseif toggle == true then
@@ -94,3 +106,13 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
         togglePlayerESP()
     end
 end)
+
+RunService.Heartbeat:Connect(function()
+    while true do
+        if toggle then
+            updateESP()
+        end
+        wait(1)
+    end
+end)
+
