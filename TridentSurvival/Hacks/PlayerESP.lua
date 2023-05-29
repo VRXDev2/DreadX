@@ -4,6 +4,7 @@ local notifications = loadstring(game:HttpGet(
 
 local UserInputService = game:getService("UserInputService")
 local toggle = true
+local loaded = false
 
 local Frame = game.Players.LocalPlayer.PlayerGui.DreadX.Background.Frame
 
@@ -71,6 +72,8 @@ notifications:message{
     Description = "PlayerESP Enabled."
 }
 
+loaded = true
+
 local function disablePlayerESP()
     for _, v in ipairs(workspace.DreadX.PlayerESPAdornee:GetDescendants()) do
         v:Destroy()
@@ -82,7 +85,9 @@ local function disablePlayerESP()
 end
 
 local function updateESP()
-    disablePlayerESP()
+    for _, v in ipairs(workspace.DreadX.PlayerESPAdornee:GetDescendants()) do
+        v:Destroy()
+    end
     wait(1.5)
     loadPlayers()
 end
@@ -107,12 +112,10 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
     end
 end)
 
-RunService.Heartbeat:Connect(function()
-    while true do
-        if toggle then
-            updateESP()
-        end
-        wait(1)
+while true do
+    if toggle then
+        updateESP()
     end
-end)
+    wait(2.5)
+end
 
