@@ -111,11 +111,13 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
     end
 end)
 
-while true do
-    if loaded then
-        if toggle then
-            updateESP()
+function refresh()
+    while true do
+        if loaded then
+            if toggle then
+                updateESP()
+            end
         end
+        wait(2.5)
     end
-    wait(2.5)
 end
