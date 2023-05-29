@@ -55,11 +55,12 @@ wait(1)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/FlagWars/Hacks/PlayerESP.lua"), true))()
 
---[[
+
 wait(1.5)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/Aimlock.lua"), true))()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/FlagWars/Hacks/Teleporter.lua"), true))()
 
+--[[
 wait(2)
 
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/OreESP.lua"), true))()
