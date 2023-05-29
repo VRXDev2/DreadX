@@ -21,7 +21,7 @@ local function loadPlayers()
             adornment.Parent = v
 
             if v.Name == "HumanoidRootPart" then
-                v:Destroy()
+                adornment:Destroy()
             end
         end
     end
@@ -36,12 +36,12 @@ local function loadPlayers()
                     adornment.AlwaysOnTop = true
                     adornment.ZIndex = 1
                     adornment.Size = v.Size
-                    adornment.Color = BrickColor.new("Crimson")
+                    adornment.Color = BrickColor.new("Really red")
                     adornment.Transparency = 0.3
                     adornment.Parent = v
 
                     if v.Name == "HumanoidRootPart" then
-                        v:Destroy()
+                        adornment:Destroy()
                     end
                 end
             end
@@ -58,7 +58,7 @@ local function loadPlayers()
                     adornment.Parent = v
 
                     if v.Name == "HumanoidRootPart" then
-                        v:Destroy()
+                        adornment:Destroy()
                     end
                 end
             end
@@ -111,7 +111,6 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
     end
 end)
 
---[[
 while true do
     if loaded then
         if toggle then
@@ -120,4 +119,3 @@ while true do
     end
     wait(2.5)
 end
-]]
