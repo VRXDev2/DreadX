@@ -12,17 +12,21 @@ UserInputService.InputBegan:Connect(function(input)
             if TeamName == "Team Blue" then
 
                 rootPart.CFrame = workspace.Core.Flags["Team Red"].Base.CFrame
+                localPlayer.Character.Jump = true
                 wait(0.2)
                 rootPart.CFrame = workspace.Core.Flags["Team Red"].Base.CFrame
                 wait(1.5)
+                localPlayer.Character.Jump = false
                 rootPart.CFrame = workspace.Core.Flags["Team Blue"].Base.CFrame
 
             else
 
                 rootPart.CFrame = workspace.Core.Flags["Team Blue"].Base.CFrame
+                localPlayer.Character.Jump = true
                 wait(0.2)
                 rootPart.CFrame = workspace.Core.Flags["Team Blue"].Base.CFrame
                 wait(1.5)
+                localPlayer.Character.Jump = false
                 rootPart.CFrame = workspace.Core.Flags["Team Red"].Base.CFrame
 
             end

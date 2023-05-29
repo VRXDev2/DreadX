@@ -1,4 +1,5 @@
-local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
+local notifications = loadstring(game:HttpGet(
+    ("https://raw.githubusercontent.com/VRXDev2/DreadX/main/Notifications.lua"), true))()
 
 local UserInputService = game:getService("UserInputService")
 local toggle = true
@@ -26,10 +27,9 @@ end
 
 for i, v in pairs(game.Workspace:GetChildren()) do
     if v:FindFirstChild("Head") then
-        if toggle == true then
-            for i, v in pairs(v:GetChildren()) do
-                if v:IsA("Part") then
-
+        for i, v in pairs(v:GetChildren()) do
+            if v:IsA("Part") then
+                if toggle == true then
                     local adornment = Instance.new("BoxHandleAdornment")
                     adornment.Adornee = v
                     adornment.AlwaysOnTop = true
@@ -46,18 +46,20 @@ for i, v in pairs(game.Workspace:GetChildren()) do
             end
             for i, v in pairs(v:GetChildren()) do
                 if v:IsA("MeshPart") then
-
-                    local adornment = Instance.new("BoxHandleAdornment")
-                    adornment.Adornee = v
-                    adornment.AlwaysOnTop = true
-                    adornment.ZIndex = 1
-                    adornment.Size = v.Size
-                    adornment.Color = BrickColor.new("Bright green")
-                    adornment.Transparency = 0.55
-                    adornment.Parent = workspace.DreadX.PlayerESPAdornee
-
-                    if v.Name == "HumanoidRootPart" then
-                        adornment:Destroy()
+                    if toggle == true then
+                        local adornment = Instance.new("BoxHandleAdornment")
+                        adornment.Adornee = v
+                        adornment.AlwaysOnTop = true
+                        adornment.ZIndex = 1
+                        adornment.Size = v.Size
+                        adornment.Color = BrickColor.new("Bright green")
+                        adornment.Transparency = 0.55
+                        adornment.Parent = workspace.DreadX.PlayerESPAdornee
+    
+                        if v.Name == "HumanoidRootPart" then
+                            adornment:Destroy()
+                        end
+                        
                     end
                 end
             end

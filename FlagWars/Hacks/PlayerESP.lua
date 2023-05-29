@@ -55,8 +55,7 @@ dwRunService.Heartbeat:Connect(function()
  
                                 if settings_tbl.Chams then
  
-                                    if not b:FindFirstChild("Glow") and
-                                    not b:FindFirstChild("Chams") then
+                                    if not b:FindFirstChild("Glow") and not b:FindFirstChild("Chams") then
  
                                         local chams_box = Instance.new("BoxHandleAdornment", b)
                                         chams_box.Name = "Chams"
@@ -89,6 +88,45 @@ dwRunService.Heartbeat:Connect(function()
  
                     else
  
+                        local char = v.Character 
+                        for k,b in next, char:GetChildren() do 
+ 
+                            if b:IsA("BasePart") and 
+                            b.Transparency ~= 1 then
+ 
+                                if settings_tbl.Chams then
+ 
+                                    if not b:FindFirstChild("Glow") and not b:FindFirstChild("Chams") then
+ 
+                                        local chams_box = Instance.new("BoxHandleAdornment", b)
+                                        chams_box.Name = "Chams"
+                                        chams_box.AlwaysOnTop = true 
+                                        chams_box.ZIndex = 4 
+                                        chams_box.Adornee = b 
+                                        chams_box.Color3 = settings_tbl.Chams_Color
+                                        chams_box.Transparency = settings_tbl.Chams_Transparency
+                                        chams_box.Size = b.Size + Vector3.new(0.002, 0.002, 0.002)
+ 
+                                        local glow_box = Instance.new("BoxHandleAdornment", b)
+                                        glow_box.Name = "Glow"
+                                        glow_box.AlwaysOnTop = false 
+                                        glow_box.ZIndex = 3 
+                                        glow_box.Adornee = b 
+                                        glow_box.Color3 = settings_tbl.Chams_Glow_Color
+                                        glow_box.Size = chams_box.Size + Vector3.new(0.05, 0.05, 0.05)
+ 
+                                    end
+ 
+                                else
+ 
+                                    destroy_chams(char)
+ 
+                                end
+ 
+                            end
+ 
+                        end
+
                         if v.Team.Name == dwLocalPlayer.Team.Name then
                             destroy_chams(v.Character)
                         end
