@@ -25,7 +25,7 @@ local Main_Tab = Window:NewTab("Main")
 
 local Main_Section = Main_Tab:NewSection("Main")
 
-Main_Section:NewButton("Teleport to Flag", "Teleports you to the opposite team's flag.", function()
+Main_Section:NewButton("[EXPERIMENTAL] Teleport to Flag", "Teleports you to the opposite team's flag.", function()
     local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
     local localPlayer = game.Players.LocalPlayer
     local humanoid = game.Players.LocalPlayer.Character.Humanoid
