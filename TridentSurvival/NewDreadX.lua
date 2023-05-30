@@ -1,7 +1,7 @@
 ---@diagnostic disable: undefined-global
 local Library = loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/UILib.lua"), true))()
 
-setfpscap(0)
+setfpscap(900)
 
 local colors = {
     SchemeColor = Color3.fromRGB(109, 65, 170),
@@ -16,18 +16,28 @@ local Window = Library.CreateLib("DreadX | Trident Survival V2", colors)
 
 local config = Instance.new("Folder")
 config.Name = "DreadX"
-config.Parent = workspace.Ignore
+config.Parent = workspace
 
 local OreESPAdornee = Instance.new("Folder")
 OreESPAdornee.Name = "OreESPAdornee"
-OreESPAdornee.Parent = workspace.Ignore:WaitForChild("DreadX")
+OreESPAdornee.Parent = workspace:WaitForChild("DreadX")
 
 local PlayerESPAdornee = Instance.new("Folder")
 PlayerESPAdornee.Name = "PlayerESPAdornee"
-PlayerESPAdornee.Parent = workspace.Ignore:WaitForChild("DreadX")
+PlayerESPAdornee.Parent = workspace:WaitForChild("DreadX")
+
+local TotemESPAdornee = Instance.new("Folder")
+TotemESPAdornee.Name = "TotemESPAdornee"
+TotemESPAdornee.Parent = workspace:WaitForChild("DreadX")
+
+local StorageESPAdornee = Instance.new("Folder")
+StorageESPAdornee.Name = "StorageESPAdornee"
+StorageESPAdornee.Parent = workspace:WaitForChild("DreadX")
 
 local Main_Tab = Window:NewTab("Main")
 local Main_ = Main_Tab:NewSection("Hacks here are coming soon. \nSee the other tabs.")
+
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Visuals.lua"), true))()
 
 -- ESP
 
@@ -36,7 +46,6 @@ local ESP_PlayerESP = ESP_Tab:NewSection("PlayerESP")
 
 ESP_PlayerESP:NewToggle("Toggle", "Enables or disables Player ESP", function(state)
     if state then
-
         for i, v in pairs(game:GetService("ReplicatedStorage").Player:GetDescendants()) do
             if v:IsA("MeshPart") or v:IsA("Part") then
                 local adornment = Instance.new("BoxHandleAdornment")
@@ -46,19 +55,19 @@ ESP_PlayerESP:NewToggle("Toggle", "Enables or disables Player ESP", function(sta
                 adornment.Size = v.Size
                 adornment.Color = BrickColor.new("Bright green")
                 adornment.Transparency = 0.3
-                adornment.Parent = workspace.Ignore.DreadX.PlayerESPAdornee
-
+                adornment.Parent = workspace.DreadX.PlayerESPAdornee
+    
                 if v.Name == "HumanoidRootPart" then
                     adornment:Destroy()
                 end
             end
         end
-
-        for i, v in pairs(game.ReplicatedStorage:GetChildren()) do
+        for i, v in pairs(game.Workspace:GetChildren()) do
             if v:FindFirstChild("Head") then
+    
                 for i, v in pairs(v:GetChildren()) do
                     if v:IsA("Part") then
-
+    
                         local adornment = Instance.new("BoxHandleAdornment")
                         adornment.Adornee = v
                         adornment.AlwaysOnTop = true
@@ -66,17 +75,16 @@ ESP_PlayerESP:NewToggle("Toggle", "Enables or disables Player ESP", function(sta
                         adornment.Size = v.Size
                         adornment.Color = BrickColor.new("Really red")
                         adornment.Transparency = 0.3
-                        adornment.Parent = workspace.Ignore.DreadX.PlayerESPAdornee
-
+                        adornment.Parent = workspace.DreadX.PlayerESPAdornee
+    
                         if v.Name == "HumanoidRootPart" then
                             adornment:Destroy()
                         end
                     end
                 end
-
                 for i, v in pairs(v:GetChildren()) do
                     if v:IsA("MeshPart") then
-
+    
                         local adornment = Instance.new("BoxHandleAdornment")
                         adornment.Adornee = v
                         adornment.AlwaysOnTop = true
@@ -84,8 +92,8 @@ ESP_PlayerESP:NewToggle("Toggle", "Enables or disables Player ESP", function(sta
                         adornment.Size = v.Size
                         adornment.Color = BrickColor.new("Bright green")
                         adornment.Transparency = 0.3
-                        adornment.Parent = workspace.Ignore.DreadX.PlayerESPAdornee
-
+                        adornment.Parent = workspace.DreadX.PlayerESPAdornee
+    
                         if v.Name == "HumanoidRootPart" then
                             adornment:Destroy()
                         end
@@ -93,9 +101,8 @@ ESP_PlayerESP:NewToggle("Toggle", "Enables or disables Player ESP", function(sta
                 end
             end
         end
-
     else
-        for _, v in ipairs(workspace.Ignore.DreadX.PlayerESPAdornee:GetDescendants()) do
+        for _, v in ipairs(workspace.DreadX.PlayerESPAdornee:GetDescendants()) do
             v:Destroy()
         end
     end
@@ -105,10 +112,7 @@ local ESP_OreESP = ESP_Tab:NewSection("OreESP")
 
 ESP_OreESP:NewToggle("Nitrate", "Enables or disables Nitrate ESP", function(state)
     if state then
-        if state == false then
-            return
-        end
-        local parts = game.ReplicatedStorage:GetDescendants()
+        local parts = workspace:GetDescendants()
         local meshes = {}
         for _, part in ipairs(parts) do
             if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material ==
@@ -116,38 +120,35 @@ ESP_OreESP:NewToggle("Nitrate", "Enables or disables Nitrate ESP", function(stat
                 local NitrateEsp = Instance.new("BoxHandleAdornment")
                 NitrateEsp.Adornee = part
                 NitrateEsp.AlwaysOnTop = true
-                NitrateEsp.Name = "Nitrate"
                 NitrateEsp.ZIndex = 0
+                NitrateEsp.Name = "Nitrate"
                 NitrateEsp.Size = part.Size
                 NitrateEsp.Transparency = 0.3
                 NitrateEsp.Color = BrickColor.new("Institutional white")
-                NitrateEsp.Parent = workspace.Ignore.DreadX.OreESPAdornee
+                NitrateEsp.Parent = workspace.DreadX.OreESPAdornee
             end
         end
-
+        
         local function onPartAdded(part)
-            if state == false then
-                return
-            end
             if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Institutional white") and part.Material ==
                 Enum.Material.Slate then
                 if state then
                     local UpdateNitrateEsp = Instance.new("BoxHandleAdornment")
                     UpdateNitrateEsp.Adornee = part
                     UpdateNitrateEsp.AlwaysOnTop = true
-                    UpdateNitrateEsp.Name = "Nitrate"
                     UpdateNitrateEsp.ZIndex = 0
                     UpdateNitrateEsp.Size = part.Size
+                    UpdateNitrateEsp.Name = "Nitrate"
                     UpdateNitrateEsp.Transparency = 0.3
                     UpdateNitrateEsp.Color = BrickColor.new("Institutional white")
-                    UpdateNitrateEsp.Parent = workspace.Ignore.DreadX.OreESPAdornee
+                    UpdateNitrateEsp.Parent = workspace.DreadX.OreESPAdornee
                 end
             end
         end
-
-        game.ReplicatedStorage.DescendantAdded:Connect(onPartAdded)
+        
+        workspace.DescendantAdded:Connect(onPartAdded)
     else
-        for _, v in ipairs(workspace.Ignore.DreadX.OreESPAdornee:GetDescendants()) do
+        for _, v in ipairs(workspace.DreadX.OreESPAdornee:GetDescendants()) do
             if v.Name == "Nitrate" then
                 v:Destroy()
             end
@@ -157,49 +158,41 @@ end)
 
 ESP_OreESP:NewToggle("Iron", "Enables or disables Iron ESP", function(state)
     if state then
-        if state == false then
-            return
-        end
-        local parts = game.ReplicatedStorage:GetDescendants()
+        local parts = workspace:GetDescendants()
         local meshes = {}
         for _, part in ipairs(parts) do
-            if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Burlap") and part.Material ==
-                Enum.Material.Slate then
+            if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Burlap") and part.Material == Enum.Material.Slate then
                 local IronEsp = Instance.new("BoxHandleAdornment")
                 IronEsp.Adornee = part
                 IronEsp.AlwaysOnTop = true
-                IronEsp.Name = "Iron"
                 IronEsp.ZIndex = 0
                 IronEsp.Size = part.Size
+                IronEsp.Name = "Iron"
                 IronEsp.Transparency = 0.3
                 IronEsp.Color = BrickColor.new("Burlap")
-                IronEsp.Parent = workspace.Ignore.DreadX.OreESPAdornee
+                IronEsp.Parent = workspace.DreadX.OreESPAdornee
             end
         end
 
         local function onPartAdded(part)
-            if state == false then
-                return
-            end
-            if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Burlap") and part.Material ==
-                Enum.Material.Slate then
+            if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Burlap") and part.Material == Enum.Material.Slate then
                 if state then
                     local UpdateIronEsp = Instance.new("BoxHandleAdornment")
                     UpdateIronEsp.Adornee = part
                     UpdateIronEsp.AlwaysOnTop = true
-                    UpdateIronEsp.Name = "Iron"
                     UpdateIronEsp.ZIndex = 0
                     UpdateIronEsp.Size = part.Size
+                    UpdateIronEsp.Name = "Iron"
                     UpdateIronEsp.Transparency = 0.3
                     UpdateIronEsp.Color = BrickColor.new("Burlap")
-                    UpdateIronEsp.Parent = workspace.Ignore.DreadX.OreESPAdornee
+                    UpdateIronEsp.Parent = workspace.DreadX.OreESPAdornee
                 end
             end
         end
 
-        game.ReplicatedStorage.DescendantAdded:Connect(onPartAdded)
+        workspace.DescendantAdded:Connect(onPartAdded)
     else
-        for _, v in ipairs(workspace.Ignore.DreadX.OreESPAdornee:GetDescendants()) do
+        for _, v in ipairs(workspace.DreadX.OreESPAdornee:GetDescendants()) do
             if v.Name == "Iron" then
                 v:Destroy()
             end
@@ -210,24 +203,18 @@ end)
 ESP_OreESP:NewToggle("Stone", "Enables or disables Stone ESP", function(state)
     if state then
         local function adornStoneOre(part)
-            if state then
-                if state == false then
-                    return
-                end
-                if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Flint") and part.Material ==
-                    Enum.Material.Limestone then
-                    local parent = part.Parent
-                    if parent and parent:IsA("Model") and #parent:GetChildren() == 1 then
-                        local StoneEsp = Instance.new("BoxHandleAdornment")
-                        StoneEsp.Adornee = part
-                        StoneEsp.AlwaysOnTop = true
-                        StoneEsp.ZIndex = 0
-                        StoneEsp.Size = part.Size
-                        StoneEsp.Transparency = 0.3
-                        StoneEsp.Name = "Stone"
-                        StoneEsp.Color = BrickColor.new("Grey")
-                        StoneEsp.Parent = workspace.Ignore.DreadX.OreESPAdornee
-                    end
+            if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Flint") and part.Material == Enum.Material.Limestone then
+                local parent = part.Parent
+                if parent and parent:IsA("Model") and #parent:GetChildren() == 1 then
+                    local StoneEsp = Instance.new("BoxHandleAdornment")
+                    StoneEsp.Adornee = part
+                    StoneEsp.AlwaysOnTop = true
+                    StoneEsp.ZIndex = 0
+                    StoneEsp.Size = part.Size
+                    StoneEsp.Name = "Stone"
+                    StoneEsp.Transparency = 0.3
+                    StoneEsp.Color = BrickColor.new("Grey")
+                    StoneEsp.Parent = workspace.DreadX.OreESPAdornee
                 end
             end
         end
@@ -236,13 +223,13 @@ ESP_OreESP:NewToggle("Stone", "Enables or disables Stone ESP", function(state)
             adornStoneOre(part)
         end
 
-        for _, part in ipairs(game.ReplicatedStorage:GetDescendants()) do
+        for _, part in ipairs(workspace:GetDescendants()) do
             adornStoneOre(part)
         end
 
-        game.ReplicatedStorage.DescendantAdded:Connect(onPartAdded)
+        workspace.DescendantAdded:Connect(onPartAdded)
     else
-        for _, v in ipairs(workspace.Ignore.DreadX.OreESPAdornee:GetDescendants()) do
+        for _, v in ipairs(workspace.DreadX.OreESPAdornee:GetDescendants()) do
             if v.Name == "Stone" then
                 v:Destroy()
             end
@@ -252,21 +239,113 @@ end)
 
 local ESP_TotemESP = ESP_Tab:NewSection("TotemESP")
 
-ESP_TotemESP:NewToggle("Toggle", "Enables or disables Totem ESP", function(state)
-    if state then
-        print("Toggle On")
-    else
-        print("Toggle Off")
+ESP_TotemESP:NewButton("TotemESP", "Enables or disables TotemESP", function()
+    local TCESPs = {}
+    local adorned = false
+
+    local function addAdornments()
+        local parts = workspace:GetDescendants()
+        for _, part in ipairs(parts) do
+            if part:IsA("UnionOperation") and part.Name == "State" and part.Material == Enum.Material.Neon then
+                local TCESP = Instance.new("BoxHandleAdornment")
+                TCESP.Adornee = part
+                TCESP.AlwaysOnTop = true
+                TCESP.ZIndex = 0
+                TCESP.Size = Vector3.new(2.5, 6.25, 2.5)
+                TCESP.Transparency = 0.3
+                TCESP.Color = BrickColor.new("Steel blue")
+                TCESP.Parent = workspace.DreadX.TotemESPAdornee
+                TCESP.CFrame = CFrame.new(0, -2.2, 0)
+                table.insert(TCESPs, TCESP)
+            end
+        end
     end
+
+    local function removeAdornments()
+        for _, v in ipairs(workspace.DreadX.TotemESPAdornee:GetDescendants()) do
+            v:Destroy()
+        end
+        TCESPs = {}
+    end
+
+    local function toggleAdornments()
+        if adorned then
+            removeAdornments()
+            adorned = false
+        else
+            addAdornments()
+            adorned = true
+        end
+    end
+
+    toggleAdornments()
 end)
 
 local ESP_StorageESP = ESP_Tab:NewSection("StorageESP")
 
 ESP_StorageESP:NewToggle("Toggle", "Enables or disables Storage ESP", function(state)
     if state then
-        print("Toggle On")
+
+        local function onPartAdded(part)
+            if part:IsA("Part") and part.BrickColor == BrickColor.new("Linen") and part.Material == Enum.Material.WoodPlanks then
+                local parent = part.Parent
+                if parent and parent:IsA("Model") and #parent:GetChildren() == 2 then
+                    local MilitaryEsp = Instance.new("BoxHandleAdornment")
+                    MilitaryEsp.Adornee = part
+                    MilitaryEsp.AlwaysOnTop = true
+                    MilitaryEsp.ZIndex = 0
+                    MilitaryEsp.Size = part.Size
+                    MilitaryEsp.Name = "MilitaryCrate"
+                    MilitaryEsp.Transparency = 0.3
+                    MilitaryEsp.Color = BrickColor.new("Dark Royal blue")
+                    MilitaryEsp.Parent = workspace.DreadX.StorageESPAdornee
+                end
+            end
+        end
+        
+        workspace.DescendantAdded:Connect(onPartAdded)
+        
+        wait(1.5)
+        
+        
+        local parts = workspace:GetDescendants()
+        local meshes = {}
+        for _, part in ipairs(parts) do
+            if part:IsA("UnionOperation") and part.BrickColor == BrickColor.new("Cashmere") and part.Material ==
+                Enum.Material.Plastic then
+                local PartCrateEsp = Instance.new("BoxHandleAdornment")
+                PartCrateEsp.Adornee = part
+                PartCrateEsp.AlwaysOnTop = true
+                PartCrateEsp.ZIndex = 0
+                PartCrateEsp.Size = part.Size
+                PartCrateEsp.Name = "PartCrate"
+                PartCrateEsp.Transparency = 0.3
+                PartCrateEsp.Color = BrickColor.new("Bright yellow")
+                PartCrateEsp.Parent = workspace.DreadX.StorageESPAdornee
+            end
+        end
+        
+        local function onPartAdded(part)
+            if part:IsA("UnionOperation") and part.BrickColor == BrickColor.new("Cashmere") and part.Material ==
+                Enum.Material.Plastic then
+                local UpdatePartCrateEsp = Instance.new("BoxHandleAdornment")
+                UpdatePartCrateEsp.Adornee = part
+                UpdatePartCrateEsp.AlwaysOnTop = true
+                UpdatePartCrateEsp.ZIndex = 0
+                UpdatePartCrateEsp.Size = part.Size
+                UpdatePartCrateEsp.Name = "PartCrate"
+                UpdatePartCrateEsp.Transparency = 0.3
+                UpdatePartCrateEsp.Color = BrickColor.new("Bright yellow")
+                UpdatePartCrateEsp.Parent = workspace.DreadX.StorageESPAdornee
+            end
+        end
+        
+        workspace.DescendantAdded:Connect(onPartAdded)
+
     else
-        print("Toggle Off")
+        for _, v in ipairs(workspace.DreadX.StorageESPAdornee:GetDescendants()) do
+            v:Destroy()
+        end
     end
 end)
 
@@ -785,9 +864,14 @@ end)
 
 -- About
 
-local About = Window:NewTab("About")
-local About_Authors = About:NewSection("Authors: VRX#0001, HuskyPoe#5284")
-local About_Version = About:NewSection("Version: 0.0.1")
+local About_Tab = Window:NewTab("About")
+local About_Section = About_Tab:NewSection("About")
+local About_Authors = About_Section:NewLabel("Authors: VRX#0001, HuskyPoe#5284")
+local About_Version = About_Section:NewLabel("Version: 0.0.1")
+
+About_Section:NewButton("Official Discord Server (It will be in your clipboard afte you click this)", "Link to our official Discord server.", function()
+    setclipboard('https://discord.gg/5bjTbbr85k')
+end)
 -- else
 --    warn("DreadX | Unsupported Game")
 -- end

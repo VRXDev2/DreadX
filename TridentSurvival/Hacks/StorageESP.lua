@@ -42,10 +42,6 @@ for _, part in ipairs(parts) do
         PartCrateEsp.Color = BrickColor.new("Bright yellow")
         PartCrateEsp.Parent = workspace
 
-        notifications:message{
-            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-            Description = "Part Crates Located!"
-        }
     end
 end
 

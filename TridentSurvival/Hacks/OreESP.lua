@@ -21,11 +21,6 @@ for _, part in ipairs(parts) do
         NitrateEsp.Transparency = 0.3
         NitrateEsp.Color = BrickColor.new("Institutional white")
         NitrateEsp.Parent = workspace.DreadX.OreESPAdornee
-
-        notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> - v5.0",
-            Description = "Nitrate Ores Located!"
-        }
     end
 end
 
@@ -63,11 +58,6 @@ for _, part in ipairs(parts) do
         IronEsp.Transparency = 0.3
         IronEsp.Color = BrickColor.new("Burlap")
         IronEsp.Parent = workspace.DreadX.OreESPAdornee
-
-        notifications:message{
-            Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> - v5.0",
-            Description = "Iron Ores Located!"
-        }
     end
 end
 
@@ -90,11 +80,6 @@ end
 workspace.DescendantAdded:Connect(onPartAdded)
 
 wait(0.25)
-
-notifications:message{
-    Title = "Yuri <font color='rgb(148, 0, 211)'>X</font> - v5.0",
-    Description = "Stone Ores Located!"
-}
 
 local function adornStoneOre(part)
     if part:IsA("MeshPart") and part.BrickColor == BrickColor.new("Flint") and part.Material == Enum.Material.Limestone then
@@ -126,19 +111,11 @@ end
 
 workspace.DescendantAdded:Connect(onPartAdded)
 
-notifications:message{
-    Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-    Description = "OreESP Loaded."
-}
 
 local function disableOreESP()
     for _, v in ipairs(workspace.DreadX.OreESPAdornee:GetDescendants()) do
         v:Destroy()
     end
-    notifications:message{
-        Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-        Description = "OreESP Disabled."
-    }
 end
 
 local function toggleOreESP()
@@ -147,10 +124,6 @@ local function toggleOreESP()
         Frame.OreESPToggled.Text = "<b>ON</b>"
         Frame.OreESPToggled.TextColor3 = Color3.fromRGB(0, 170, 0)
 
-        notifications:message{
-            Title = "<b>Dread<font color='rgb(183, 11, 209)'>X</font></b>",
-            Description = "OreESP Enabled."
-        }
     elseif toggle == true then
         toggle = false
         disableOreESP()
