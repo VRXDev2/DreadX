@@ -68,6 +68,7 @@ Frame.BackgroundTransparency = 1.000
 Frame.Position = UDim2.new(0.02, 0, 0, 0)
 Frame.Size = UDim2.new(0.99, 0, 0.95, 0)
 
+--[[
 Aimlock.Name = "Aimlock"
 Aimlock.Parent = Frame
 Aimlock.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -94,6 +95,7 @@ AimlockToggled.TextColor3 = Color3.fromRGB(226, 0, 0)
 AimlockToggled.TextSize = 16.000
 AimlockToggled.TextWrapped = true
 AimlockToggled.TextXAlignment = Enum.TextXAlignment.Left
+]]
 
 Freecam.Name = "Freecam"
 Freecam.Parent = Frame
