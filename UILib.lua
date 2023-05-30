@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local Kavo = {}
 
 local tween = game:GetService("TweenService")
@@ -2055,7 +2056,7 @@ function Kavo.CreateLib(kavName, themeList)
                 keybindElement.MouseEnter:Connect(function()
                     if not focusing then
                         game.TweenService:Create(keybindElement, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
-                            BackgroundColor3 = Color3.fromRGB(themeList.ElementColor.r * 255 + 8, themeList.ElementColor.g * 255 + 9, themeList.ElementColor.b * 255 + 10)
+                            BackgroundColor3 = Color3.fromRGB(themeList.ElementColor.r + 8, themeList.ElementColor.g + 9, themeList.ElementColor.b + 10)
                         }):Play()
                         oHover = true
                     end 

@@ -77,10 +77,6 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/
 
 wait(1)
 
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/Aimlock.lua"), true))()
-
-wait(2)
-
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/VRXDev2/DreadX/main/TridentSurvival/Hacks/OreESP.lua"), true))()
 
 wait(2)
