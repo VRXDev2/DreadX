@@ -99,13 +99,17 @@ Autofarm_Section:NewToggle("Toggle", "Toggles autofarm", function(state)
             local CoinContainer = Workspace:FindFirstChild("CoinContainer", true)
             if CoinContainer and Client.PlayerGui.MainGUI.Game.CashBag.Visible == true then
                 local coin = CoinContainer:FindFirstChild("Coin_Server")
-                if coin then
+                if coin and coin.CoinType.Value == "Coin" then
                     repeat
-                        RootPart.CFrame = CFrame.new(coin.Position + Vector3.new(0, 3.5, 0)) * CFrame.Angles(0, 0, math.rad(180))
-                        RunService.Stepped:Wait(0.1)
+                    	local Character = Client.Character
+						local Humanoid = Character:FindFirstChild("Humanoid") or Character:WaitForChild("Humanoid")
+						local RootPart = Character:FindFirstChild("HumanoidRootPart") or Character:WaitForChild("HumanoidRootPart")
+                    	
+                        RootPart.CFrame = CFrame.new(coin.Position + Vector3.new(0, 2.5, 0)) * CFrame.Angles(0, 0, math.rad(180))
+                        RunService.Stepped:Wait(0.7)
                         if not getgenv().Autofarm then break end
                     until not coin:IsDescendantOf(Workspace) or coin.Name ~= "Coin_Server" or Client.PlayerGui.MainGUI.Game.CashBag.Full.Visible
-                    task.wait(1.1)
+                    task.wait(1.75)
                 end
             else
                 task.wait(1.5)
