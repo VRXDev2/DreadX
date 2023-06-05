@@ -105,7 +105,7 @@ Autofarm_Section:NewToggle("Toggle", "Toggles autofarm", function(state)
                         RunService.Stepped:Wait(0.1)
                         if not getgenv().Autofarm then break end
                     until not coin:IsDescendantOf(Workspace) or coin.Name ~= "Coin_Server" or Client.PlayerGui.MainGUI.Game.CashBag.Full.Visible
-                    task.wait(1.7)
+                    task.wait(1.1)
                 end
             else
                 task.wait(1.5)
