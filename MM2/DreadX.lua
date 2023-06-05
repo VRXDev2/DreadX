@@ -68,6 +68,18 @@ Main_Character:NewSlider("JumpPower", "Changes your jumppower", 150, 50, functio
     Humanoid.JumpPower = s
 end)
 
+local Main_Teleport = Main_Tab:NewSection("Teleport")
+
+Main_Teleport:NewToggle("ClickTP (CTRL + Click)", "Toggles ClickTP", function(state)
+    getgenv().ClickTP = state;
+end)
+
+Mouse.Button1Down:connect(function()
+    if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end;
+    if not Mouse.Target then return end;
+    if not getgenv().ClickTP then return end;
+    Character:MoveTo(Mouse.Hit.p);
+end)
 
 local Autofarm_Tab = Window:NewTab("Autofarm")
 local Autofarm_Section = Autofarm_Tab:NewSection("Autofarm")
@@ -89,11 +101,11 @@ Autofarm_Section:NewToggle("Toggle", "Toggles autofarm", function(state)
                 local coin = CoinContainer:FindFirstChild("Coin_Server")
                 if coin then
                     repeat
-                        RootPart.CFrame = CFrame.new(coin.Position + Vector3.new(0, 1.5, 0)) * CFrame.Angles(0, 0, math.rad(180))
-                        RunService.Stepped:Wait()
+                        RootPart.CFrame = CFrame.new(coin.Position + Vector3.new(0, 3.5, 0)) * CFrame.Angles(0, 0, math.rad(180))
+                        RunService.Stepped:Wait(0.1)
                         if not getgenv().Autofarm then break end
-                    until not coin:IsDescendantOf(Workspace) or coin.Name ~= "Coin_Server"
-                    task.wait(1.8)
+                    until not coin:IsDescendantOf(Workspace) or coin.Name ~= "Coin_Server" or Client.PlayerGui.MainGUI.Game.CashBag.Full.Visible
+                    task.wait(1.7)
                 end
             else
                 task.wait(1.5)
