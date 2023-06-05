@@ -35,6 +35,7 @@ Main_Section:NewButton("[EXPERIMENTAL] Teleport to Flag", "Teleports you to the 
 
     if rootPart and humanoid.Health > 0 then
         if not cooldown then
+            cooldown = true
             if TeamName == "Team Blue" then
 
                 rootPart.CFrame = workspace.Core.Flags["Team Red"].Base.CFrame
@@ -44,8 +45,6 @@ Main_Section:NewButton("[EXPERIMENTAL] Teleport to Flag", "Teleports you to the 
                 wait(1.5)
                 localPlayer.Character.Jump = false
                 rootPart.CFrame = workspace.Core.Flags["Team Blue"].Base.CFrame
-
-                cooldown = true
 
                 wait(5)
 
@@ -60,8 +59,6 @@ Main_Section:NewButton("[EXPERIMENTAL] Teleport to Flag", "Teleports you to the 
                 wait(1.5)
                 localPlayer.Character.Jump = false
                 rootPart.CFrame = workspace.Core.Flags["Team Red"].Base.CFrame
-
-                cooldown = true
 
                 wait(5)
 
@@ -355,18 +352,8 @@ end)
 local About_Tab = Window:NewTab("About")
 local About_Section = About_Tab:NewSection("About")
 local About_Authors = About_Section:NewLabel("Authors: VRX#0001, HuskyPoe#5284")
-local About_Version = About_Section:NewLabel("Version: 0.0.1")
+local About_Version = About_Section:NewLabel("Version: 0.0.3")
 
-local DCclicked = false
-
-local button = About_Section:NewButton("Official Discord Server", "Link to our official Discord server.", function()
-    DCclicked = true
+About_Section:NewButton("Official Discord Server (It will be in your clipboard)", "Link to our official Discord server.", function()
     setclipboard('https://discord.gg/5bjTbbr85k')
 end)
-
-if DCclicked == true then
-    button:UpdateButton("Copied to clipboard")
-    wait(2)
-    button:UpdateButton("Official Discord Server")
-    DCclicked = false
-end

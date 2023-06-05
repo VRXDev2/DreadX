@@ -868,9 +868,9 @@ end)
 local About_Tab = Window:NewTab("About")
 local About_Section = About_Tab:NewSection("About")
 local About_Authors = About_Section:NewLabel("Authors: VRX#0001, HuskyPoe#5284")
-local About_Version = About_Section:NewLabel("Version: 0.0.1")
+local About_Version = About_Section:NewLabel("Version: 0.0.2")
 
-About_Section:NewButton("Official Discord Server (It will be in your clipboard afte you click this)", "Link to our official Discord server.", function()
+About_Section:NewButton("Official Discord Server (It will be in your clipboard)", "Link to our official Discord server.", function()
     setclipboard('https://discord.gg/5bjTbbr85k')
 end)
 -- else
