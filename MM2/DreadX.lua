@@ -183,6 +183,19 @@ Players.PlayerRemoving:Connect(function(player)
     folder[player.Name]:Destroy()
 end)
 
+Autofarm_Section:NewToggle("Toggle", "Toggles ESP", function(state)
+    getgenv().AllEsp = state
+    
+    for i, v in pairs(folder:GetChildren()) do
+        if v:IsA("BillboardGui") and Players[tostring(v.Name)] then
+            if getgenv().AllEsp then
+                v.Enabled = true
+            else
+                v.Enabled = false
+            end
+        end
+    end
+end)
 
 
 
