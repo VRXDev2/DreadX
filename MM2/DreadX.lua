@@ -19,21 +19,12 @@ local Players = game:GetService('Players')
 local Client = Players.LocalPlayer
 local RunService = game:GetService('RunService')
 local Workspace = game:GetService("Workspace")
-local Lighting = game:GetService("Lighting")
 local UIS = game:GetService("UserInputService")
-local Teams = game:GetService("Teams")
 local ScriptContext = game:GetService("ScriptContext")
 local CoreGui = game:GetService("CoreGui")
 local Camera = Workspace.CurrentCamera
 local Mouse = Client:GetMouse()
-local Terrain = Workspace.Terrain
 local VirtualUser = game:GetService("VirtualUser")
-
-local Murderer, Sheriff = nil, nil
-
-local Character = Client.Character
-local Humanoid = Character:FindFirstChild("Humanoid") or Character:WaitForChild("Humanoid")
-local RootPart = Character:FindFirstChild("HumanoidRootPart") or Character:WaitForChild("HumanoidRootPart")
 
 function GetMurderer()
     for i,v in pairs(Players:GetChildren()) do 
@@ -61,12 +52,111 @@ local Main_Tab = Window:NewTab("Main")
 local Main_Character = Main_Tab:NewSection("Character")
 
 Main_Character:NewSlider("WalkSpeed", "Changes your walkspeed", 150, 16, function(s)
+    local Character = Client.Character
+    local Humanoid = Character:FindFirstChild("Humanoid") or Character:WaitForChild("Humanoid")
     Humanoid.WalkSpeed = s
 end)
 
 Main_Character:NewSlider("JumpPower", "Changes your jumppower", 150, 50, function(s)
+    local Character = Client.Character
+    local Humanoid = Character:FindFirstChild("Humanoid") or Character:WaitForChild("Humanoid")
     Humanoid.JumpPower = s
 end)
+
+
+
+local c
+local h
+local bv
+local bav
+local cam
+local flying
+local p = Client
+local buttons = {W = false, S = false, A = false, D = false, Moving = false}
+
+local StartFly = function ()
+    if not Client.Character or not Character.Head or flying then return end
+    c = Character
+    h = Humanoid
+    h.PlatformStand = true
+    cam = workspace:WaitForChild('Camera')
+    bv = Instance.new("BodyVelocity")
+    bav = Instance.new("BodyAngularVelocity")
+    bv.Velocity, bv.MaxForce, bv.P = Vector3.new(0, 0, 0), Vector3.new(10000, 10000, 10000), 1000
+    bav.AngularVelocity, bav.MaxTorque, bav.P = Vector3.new(0, 0, 0), Vector3.new(10000, 10000, 10000), 1000
+    bv.Parent = c.Head
+    bav.Parent = c.Head
+    flying = true
+    h.Died:connect(function() flying = false end)
+end
+
+local EndFly = function ()
+    if not p.Character or not flying then return end
+    h.PlatformStand = false
+    bv:Destroy()
+    bav:Destroy()
+    flying = false
+end
+
+game:GetService("UserInputService").InputBegan:connect(function (input, GPE) 
+    if GPE then return end
+    for i, e in pairs(buttons) do
+        if i ~= "Moving" and input.KeyCode == Enum.KeyCode[i] then
+            buttons[i] = true
+            buttons.Moving = true
+        end
+    end
+end)
+
+game:GetService("UserInputService").InputEnded:connect(function (input, GPE) 
+    if GPE then return end
+    local a = false
+    for i, e in pairs(buttons) do
+        if i ~= "Moving" then
+            if input.KeyCode == Enum.KeyCode[i] then
+                buttons[i] = false
+            end
+            if buttons[i] then a = true end
+        end
+    end
+    buttons.Moving = a
+end)
+
+local setVec = function (vec)
+    return vec * ((getgenv().FlySpeed or 50) / vec.Magnitude)
+end
+
+game:GetService("RunService").Heartbeat:connect(function (step)
+    if flying and c and c.PrimaryPart then
+        local p = c.PrimaryPart.Position
+        local cf = cam.CFrame
+        local ax, ay, az = cf:toEulerAnglesXYZ()
+        c:SetPrimaryPartCFrame(CFrame.new(p.x, p.y, p.z) * CFrame.Angles(ax, ay, az))
+        if buttons.Moving then
+            local t = Vector3.new()
+            if buttons.W then t = t + (setVec(cf.lookVector)) end
+            if buttons.S then t = t - (setVec(cf.lookVector)) end
+            if buttons.A then t = t - (setVec(cf.rightVector)) end
+            if buttons.D then t = t + (setVec(cf.rightVector)) end
+            c:TranslateBy(t * step)
+        end
+    end
+end)
+
+
+Main_Character:NewToggle("Fly", "Toggles Fly", function(state)
+    getgenv().Fly = state
+    if getgenv().Fly then
+        StartFly()
+    else
+        EndFly()
+    end
+end)
+
+Main_Character:NewSlider("Fly Speed", "Changes your FlySpeed", 150, 20, function(s)
+    getgenv().FlySpeed = s
+end)
+
 
 local Main_Teleport = Main_Tab:NewSection("Teleport")
 
@@ -78,8 +168,121 @@ Mouse.Button1Down:connect(function()
     if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end;
     if not Mouse.Target then return end;
     if not getgenv().ClickTP then return end;
+
+    local Character = Client.Character
     Character:MoveTo(Mouse.Hit.p);
 end)
+
+local Main_Murderer = Main_Tab:NewSection("Murderer")
+
+Main_Murderer:NewToggle("Killaura", "Toggles Killaura", function(state)
+    getgenv().Killaura = state
+end)
+
+local lastAttack = tick()
+RunService.Heartbeat:Connect(function()
+   if (tick() - lastAttack) < 0.1 then
+       return
+   end
+    pcall(function()
+        local Knife = Client.Backpack:FindFirstChild("Knife") or Client.Character:FindFirstChild("Knife")
+        if Knife and Knife:IsA("Tool") and getgenv().Killaura then
+            for i, v in ipairs(Players:GetPlayers()) do
+                if v ~= Client and v.Character ~= nil --[[and not table.find(getgenv().Whitelisted,v.Name)]] then
+                    local EnemyRoot = v.Character.HumanoidRootPart
+                    local EnemyPosition = EnemyRoot.Position
+                    local Distance = (EnemyPosition - RootPart.Position).Magnitude
+                    if (Distance <= --[[getgenv().KnifeRange]] 5) then
+                        VirtualUser:ClickButton1(Vector2.new())
+                        firetouchinterest(EnemyRoot, Knife.Handle, 1)
+                        firetouchinterest(EnemyRoot, Knife.Handle, 0)
+                        lastAttack = tick()
+                    end
+                end
+            end
+        end
+    end)
+end)
+
+local Main_Sheriff = Main_Tab:NewSection("Sheriff")
+
+getgenv().GunAccuracy = 25
+
+Main_Sheriff:NewToggle("SilentAim", "Toggles SilentAim", function(state)
+    getgenv().SilentAim = state
+end)
+
+Main_Sheriff:NewButton("Grab Gun", "Grabs the gun if it's on the ground", function()
+    if not CanGrab then return end
+        local gundrop = Workspace:FindFirstChild("GunDrop")
+        if gundrop and not lastCFrame then
+            local Character = Client.Character
+			local Humanoid = Character:FindFirstChild("Humanoid") or Character:WaitForChild("Humanoid")
+			local RootPart = Character:FindFirstChild("HumanoidRootPart") or Character:WaitForChild("HumanoidRootPart")
+			
+            lastCFrame = RootPart.CFrame
+            pcall(function()
+                repeat
+                    RootPart.CFrame = gundrop.CFrame
+                    RunService.Stepped:Wait()
+                until not gundrop:IsDescendantOf(Workspace)
+                RootPart.CFrame = lastCFrame
+                lastCFrame = false
+            end)
+        end
+end)
+
+
+coroutine.wrap(function()
+    repeat wait()
+        pcall(function()
+            Murderer = GetMurderer()
+            Sheriff = GetSheriff()
+        end)
+    until Murderer and Sheriff
+end)()
+--<>----<>----<>----<>----<>----<>----<>--
+--<>----<>----<>----<>----<>----<>----<>--
+ReplicatedStorage.UpdatePlayerData.OnClientEvent:Connect(function()
+    CanGrab = false
+end)
+
+local GunHook
+GunHook = hookmetamethod(game, "__namecall", function(self, ...)
+	local method = getnamecallmethod()
+	local args = { ... }
+	if not checkcaller() then
+		if typeof(self) == "Instance" then
+			if self.Name == "ShootGun" and method == "InvokeServer" then
+				if getgenv().SilentAim and getgenv().GunAccuracy then
+					if Murderer then
+						local Root = Players[tostring(Murderer)].Character.PrimaryPart
+						local Veloc = Root.AssemblyLinearVelocity
+						local Pos = Root.Position + (Veloc * Vector3.new(getgenv().GunAccuracy / 200, 0, getgenv().GunAccuracy/ 200))
+						args[2] = Pos
+					end
+				end
+			end
+		end
+	end
+	return GunHook(self, unpack(args))
+end)
+
+local __namecall
+__namecall = hookmetamethod(game, "__namecall", function(self, ...)
+	local method = getnamecallmethod()
+	local args = { ... }
+	if not checkcaller() then
+        if tostring(method) == "InvokeServer" and tostring(self) == "GetChance" then
+            wait(13)
+            Murderer = GetMurderer()
+            Sheriff = GetSheriff()
+            CanGrab = true
+        end
+	end
+	return __namecall(self, unpack(args))
+end)
+
 
 local Autofarm_Tab = Window:NewTab("Autofarm")
 local Autofarm_Section = Autofarm_Tab:NewSection("Autofarm")
@@ -89,7 +292,7 @@ Autofarm_Section:NewDropdown("Autofarm Target", "Choose the autofarm target", {"
 end)
 
 
-Autofarm_Section:NewToggle("Toggle", "Toggles autofarm", function(state)
+Autofarm_Section:NewToggle("Toggle", "Toggles Autofarm", function(state)
     getgenv().Autofarm = state
 
     if not getgenv().AutofarmTarget then return end
@@ -130,11 +333,14 @@ end)
 local ESP_Tab = Window:NewTab("ESP")
 local ESP_ESP = ESP_Tab:NewSection("ESP")
 
-local folder = Instance.new("Folder",CoreGui)
-folder.Name = "ESP Holder"
+
+if not CoreGui:FindFirstChild("ESP Holder") then
+	ESPfolder = Instance.new("Folder",CoreGui)
+	ESPfolder.Name = "ESP Holder"
+end
 	
 local function AddBillboard(player)
-    local billboard = Instance.new("BillboardGui",folder)
+    local billboard = Instance.new("BillboardGui",ESPfolder)
     billboard.Name = player.Name
     billboard.AlwaysOnTop = true
     billboard.Size = UDim2.fromOffset(200,50)
@@ -180,13 +386,13 @@ end
 Players.PlayerAdded:Connect(AddBillboard)
 
 Players.PlayerRemoving:Connect(function(player)
-    folder[player.Name]:Destroy()
+    ESPfolder[player.Name]:Destroy()
 end)
 
 ESP_ESP:NewToggle("Toggle", "Toggles ESP", function(state)
     getgenv().AllEsp = state
 
-    for i, v in pairs(folder:GetChildren()) do
+    for i, v in pairs(ESPfolder:GetChildren()) do
         if v:IsA("BillboardGui") and Players[tostring(v.Name)] then
             if getgenv().AllEsp then
                 v.Enabled = true
