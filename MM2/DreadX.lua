@@ -26,6 +26,26 @@ local Camera = Workspace.CurrentCamera
 local Mouse = Client:GetMouse()
 local VirtualUser = game:GetService("VirtualUser")
 
+local GunHighlight = Instance.new("Highlight")
+local GunHandleAdornment = Instance.new("SphereHandleAdornment")
+
+GunHighlight.FillColor = Color3.fromRGB(248, 241, 174)
+GunHighlight.Adornee = Workspace:FindFirstChild("GunDrop")
+GunHighlight.OutlineTransparency = 1
+GunHighlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+GunHighlight.RobloxLocked = true
+
+GunHandleAdornment.Color3 = Color3.fromRGB(248, 241, 174)
+GunHandleAdornment.Transparency = 0.2
+GunHandleAdornment.Adornee = Workspace:FindFirstChild("GunDrop")
+GunHandleAdornment.AlwaysOnTop = true
+GunHandleAdornment.AdornCullingMode = Enum.AdornCullingMode.Never
+GunHandleAdornment.RobloxLocked = true
+
+GunHighlight.Parent = CoreGui
+GunHandleAdornment.Parent = CoreGui
+
+
 function GetMurderer()
     for i,v in pairs(Players:GetChildren()) do 
         if v.Backpack:FindFirstChild("Knife") or v.Character:FindFirstChild("Knife") and v.Name == "Tool" then
@@ -75,6 +95,10 @@ local p = Client
 local buttons = {W = false, S = false, A = false, D = false, Moving = false}
 
 local StartFly = function ()
+    local Character = Client.Character
+    local Humanoid = Character:FindFirstChild("Humanoid") or Character:WaitForChild("Humanoid")
+    local RootPart = Character:FindFirstChild("HumanoidRootPart") or Character:WaitForChild("HumanoidRootPart")
+
     if not Client.Character or not Character.Head or flying then return end
     c = Character
     h = Humanoid
@@ -188,11 +212,11 @@ RunService.Heartbeat:Connect(function()
         local Knife = Client.Backpack:FindFirstChild("Knife") or Client.Character:FindFirstChild("Knife")
         if Knife and Knife:IsA("Tool") and getgenv().Killaura then
             for i, v in ipairs(Players:GetPlayers()) do
-                if v ~= Client and v.Character ~= nil --[[and not table.find(getgenv().Whitelisted,v.Name)]] then
+                if v ~= Client and v.Character ~= nil then
                     local EnemyRoot = v.Character.HumanoidRootPart
                     local EnemyPosition = EnemyRoot.Position
                     local Distance = (EnemyPosition - RootPart.Position).Magnitude
-                    if (Distance <= --[[getgenv().KnifeRange]] 5) then
+                    if (Distance <= 6.5) then
                         VirtualUser:ClickButton1(Vector2.new())
                         firetouchinterest(EnemyRoot, Knife.Handle, 1)
                         firetouchinterest(EnemyRoot, Knife.Handle, 0)
@@ -221,14 +245,14 @@ Main_Sheriff:NewButton("Grab Gun", "Grabs the gun if it's on the ground", functi
 			local RootPart = Character:FindFirstChild("HumanoidRootPart") or Character:WaitForChild("HumanoidRootPart")
 			
             lastCFrame = RootPart.CFrame
-            pcall(function()
+            --pcall(function()
                 repeat
                     RootPart.CFrame = gundrop.CFrame
                     RunService.Stepped:Wait()
                 until not gundrop:IsDescendantOf(Workspace)
                 RootPart.CFrame = lastCFrame
-                lastCFrame = false
-            end)
+                lastCFrame = nil
+            --end)
         end
 end)
 
@@ -334,10 +358,8 @@ local ESP_Tab = Window:NewTab("ESP")
 local ESP_ESP = ESP_Tab:NewSection("ESP")
 
 
-if not CoreGui:FindFirstChild("ESP Holder") then
-	ESPfolder = Instance.new("Folder",CoreGui)
-	ESPfolder.Name = "ESP Holder"
-end
+ESPfolder = Instance.new("Folder",CoreGui)
+ESPfolder.Name = "ESP Holder"
 	
 local function AddBillboard(player)
     local billboard = Instance.new("BillboardGui",ESPfolder)
@@ -389,7 +411,7 @@ Players.PlayerRemoving:Connect(function(player)
     ESPfolder[player.Name]:Destroy()
 end)
 
-ESP_ESP:NewToggle("Toggle", "Toggles ESP", function(state)
+ESP_ESP:NewToggle("ESP (Player)", "Toggles ESP", function(state)
     getgenv().AllEsp = state
 
     for i, v in pairs(ESPfolder:GetChildren()) do
@@ -403,6 +425,28 @@ ESP_ESP:NewToggle("Toggle", "Toggles ESP", function(state)
     end
 end)
 
+
+ESP_ESP:NewToggle("GunESP", "Toggles GunESP", function(state)
+    getgenv().GunESP = state
+end)
+
+coroutine.wrap(function()
+    RunService.RenderStepped:Connect(function()
+        pcall(function()
+            if getgenv().GunESP then
+                local gundrop = Workspace:FindFirstChild("GunDrop")
+                GunHighlight.Adornee = gundrop
+                GunHandleAdornment.Adornee = gundrop
+                if gundrop then 
+                    GunHandleAdornment.Size = gundrop.Size + Vector3.new(0.05, 0.05, 0.05) 
+                end
+        
+                GunHighlight.Enabled = getgenv().GunESP
+                GunHandleAdornment.Visible = getgenv().GunESP
+            end
+        end)
+    end)
+end)()
 
 
 -- Keybinds
