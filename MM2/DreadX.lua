@@ -128,7 +128,7 @@ end)
 
 
 local ESP_Tab = Window:NewTab("ESP")
-local ESP_PlayerESP = ESP_Tab:NewSection("PlayerESP")
+local ESP_ESP = ESP_Tab:NewSection("ESP")
 
 local folder = Instance.new("Folder",CoreGui)
 folder.Name = "ESP Holder"
@@ -183,9 +183,9 @@ Players.PlayerRemoving:Connect(function(player)
     folder[player.Name]:Destroy()
 end)
 
-Autofarm_Section:NewToggle("Toggle", "Toggles ESP", function(state)
+ESP_ESP:NewToggle("Toggle", "Toggles ESP", function(state)
     getgenv().AllEsp = state
-    
+
     for i, v in pairs(folder:GetChildren()) do
         if v:IsA("BillboardGui") and Players[tostring(v.Name)] then
             if getgenv().AllEsp then
