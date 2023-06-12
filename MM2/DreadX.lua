@@ -271,6 +271,21 @@ ReplicatedStorage.UpdatePlayerData.OnClientEvent:Connect(function()
     CanGrab = false
 end)
 
+local __namecall
+__namecall = hookmetamethod(game, "__namecall", function(self, ...)
+	local method = getnamecallmethod()
+	local args = { ... }
+	if not checkcaller() then
+        if tostring(method) == "InvokeServer" and tostring(self) == "GetChance" then
+            wait(13)
+            Murderer = GetMurderer()
+            Sheriff = GetSheriff()
+            CanGrab = true
+        end
+	end
+	return __namecall(self, unpack(args))
+end)
+
 local GunHook
 GunHook = hookmetamethod(game, "__namecall", function(self, ...)
 	local method = getnamecallmethod()
@@ -290,21 +305,6 @@ GunHook = hookmetamethod(game, "__namecall", function(self, ...)
 		end
 	end
 	return GunHook(self, unpack(args))
-end)
-
-local __namecall
-__namecall = hookmetamethod(game, "__namecall", function(self, ...)
-	local method = getnamecallmethod()
-	local args = { ... }
-	if not checkcaller() then
-        if tostring(method) == "InvokeServer" and tostring(self) == "GetChance" then
-            wait(13)
-            Murderer = GetMurderer()
-            Sheriff = GetSheriff()
-            CanGrab = true
-        end
-	end
-	return __namecall(self, unpack(args))
 end)
 
 
