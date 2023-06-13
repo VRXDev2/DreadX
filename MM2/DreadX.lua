@@ -371,7 +371,7 @@ local function AddBillboard(player)
 
     local textLabel = Instance.new("TextLabel",billboard)
     textLabel.TextSize = 20
-    textLabel.Text = player.Name + " .exe"
+    textLabel.Text = player.Name .. " .exe"
     textLabel.Font = Enum.Font.Arial
     textLabel.BackgroundTransparency = 1
     textLabel.Size = UDim2.fromScale(1,1)
