@@ -1283,7 +1283,7 @@ function Kavo.CreateLib(kavName, themeList)
                 sliderBtn.Parent = sliderElement
                 sliderBtn.BackgroundColor3 = Color3.fromRGB(themeList.ElementColor.r + 5, themeList.ElementColor.g + 5, themeList.ElementColor.b + 5)
                 sliderBtn.BorderSizePixel = 0
-                sliderBtn.Position = UDim2.new(0.488749951, 0, 0.393939406, 0)
+                sliderBtn.Position = UDim2.new(0.488749951, 0, 0.793939406, 0)
                 sliderBtn.Size = UDim2.new(0, 149, 0, 6)
                 sliderBtn.AutoButtonColor = false
                 sliderBtn.Font = Enum.Font.SourceSans
